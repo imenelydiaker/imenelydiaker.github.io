@@ -11,36 +11,36 @@ redirect_from:
 
 Education
 ======
-* Ph.D in AI, Université Lyon, 2026 (expected)
+* Ph.D in AI, INSA Lyon, December 2023 to 2026 (expected)
 * M.S. in Data Mining and ML, Université Lyon 2, 2021
 * B.S. in Softwware Engineering, USTHB, 2019
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* From April 2023 until now: PhD Student @ Esker
+  * Focusing on my PhD.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* From September 2021 to April 2023: Data Scientist @ Cygogn
+  * Model development and deployment on AWS.
+  * BI and data engineering.
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* From October 2021 to February 2023: Teacher @ IA School
+  * Object Oriented Programming with Python (Masters).
+  * Advanced SQL (Masters).
+
+* March 2021 to September 2021: Data Scientist Intern @ OFA
+  * Developped a models for email classification.
+  
+* June 2020 to September 2020: Web Developper Intern
+  * Developped an app for data vizualization using Symfony and ReactJS.
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Python
+* SQL
+* Git
 
+<!-- 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
@@ -61,4 +61,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
