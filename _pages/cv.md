@@ -13,7 +13,7 @@ Education
 ======
 * Ph.D in AI, INSA Lyon, December 2023 to 2026 (expected)
 * M.S. in Data Mining and ML, Université Lyon 2, 2021
-* B.S. in Softwware Engineering, USTHB, 2019
+* B.S. in Software Engineering, USTHB, 2019
 
 Work experience
 ======
