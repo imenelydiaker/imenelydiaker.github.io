@@ -8,7 +8,7 @@ date: 2024-09-26
 location: "Lyon, France"
 ---
 
-Introduciton to Cloud Computing using Azure.
+Introduction to Cloud Computing using Azure.
 
 Slides
 ======
