@@ -36,9 +36,8 @@ Work experience
   
 Skills
 ======
-* Python
-* SQL
-* Git
+* Python, Git, SQL, AWS
+* ML, DL
 
 <!-- 
 Publications
