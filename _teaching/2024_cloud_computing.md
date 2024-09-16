@@ -8,7 +8,7 @@ date: 2024-09-26
 location: "Lyon, France"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Introduciton to Cloud Computing using Azure.
 
 Slides
 ======
