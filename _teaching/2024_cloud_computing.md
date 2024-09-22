@@ -12,12 +12,22 @@ Introduction to Cloud Computing using Azure.
 
 Slides
 ======
+Slides [here]().
 
 Assignements
 ======
+[Assignement 1: Introduction to the cloud]()  
+[Assignement 2: Getting Strated with Azure]()   
+[Assignement 3: Azure Storage]()    
+[Assignement 4: Azure WebApp]()   
+[Assignement 5: Azure VM]()  
+[Assignement 6: Connecting the dots]()
 
 Documentation
 ======
+[Azure documentation](https://learn.microsoft.com/fr-fr/azure/?product=popular)
 
 Projects
 ======
+[Projects ideas]()  
+<!-- [Discord bot project](../files/2024_cloud_computing/discord_bot_project.html) -->
