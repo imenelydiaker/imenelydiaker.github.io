@@ -16,11 +16,11 @@ Slides [here]().
 
 Assignements
 ======
-[Assignement 1: Introduction to the cloud]()  
-[Assignement 2: Getting Strated with Azure]()   
-[Assignement 3: Azure Storage]()    
+[Assignement 1: Introduction to the cloud](../files/2024_cloud_computing/00-Getting_started_with_the_cloud.html)  
+[Assignement 2: Getting Strated with Azure]()  
+[Assignement 3: Azure Storage]()  
 [Assignement 4: Azure WebApp]()   
-[Assignement 5: Azure VM]()  
+[Assignement 5: Azure VM]() 
 [Assignement 6: Connecting the dots]()
 
 Documentation

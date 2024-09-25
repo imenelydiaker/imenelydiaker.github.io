@@ -21,6 +21,7 @@ Assignements
 [Assignement 3: Azure Storage](../files/2024_cloud_computing/02-Blob_storage.html)  
 [Assignement 4: Azure WebApp](../files/2024_cloud_computing/03-Azure_webapp.html)   
 [Assignement 5: Azure VM](../files/2024_cloud_computing/04-Azure_VM.html)
+[Assignement 6: Connecting the dots]()
 
 Documentation
 ======

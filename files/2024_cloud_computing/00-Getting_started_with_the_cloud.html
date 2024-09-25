@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud Computing - Assignment 1&colon; Introduction to Cloud Computing and Azure</title>
+  <style>
+    /* From extension vscode.github */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    .vscode-dark img[src$=\#gh-light-mode-only],
+    .vscode-light img[src$=\#gh-dark-mode-only],
+    .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+    .vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+      display: none;
+    }
+  </style>
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    :root {
+      --color-note: #0969da;
+      --color-tip: #1a7f37;
+      --color-warning: #9a6700;
+      --color-severe: #bc4c00;
+      --color-caution: #d1242f;
+      --color-important: #8250df;
+    }
+  </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-note: #2f81f7;
+        --color-tip: #3fb950;
+        --color-warning: #d29922;
+        --color-severe: #db6d28;
+        --color-caution: #f85149;
+        --color-important: #a371f7;
+      }
+    }
+  </style>
+  <style>
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      color: inherit;
+      border-left: .25em solid #888;
+    }
+
+    .markdown-alert>:first-child {
+      margin-top: 0
+    }
+
+    .markdown-alert>:last-child {
+      margin-bottom: 0
+    }
+
+    .markdown-alert .markdown-alert-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      line-height: 1
+    }
+
+    .markdown-alert .markdown-alert-title .octicon {
+      margin-right: 0.5rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+    }
+
+    .markdown-alert.markdown-alert-note {
+      border-left-color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-note .markdown-alert-title {
+      color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-important {
+      border-left-color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-important .markdown-alert-title {
+      color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-warning {
+      border-left-color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-warning .markdown-alert-title {
+      color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-tip {
+      border-left-color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-tip .markdown-alert-title {
+      color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-caution {
+      border-left-color: var(--color-caution);
+    }
+
+    .markdown-alert.markdown-alert-caution .markdown-alert-title {
+      color: var(--color-caution);
+    }
+  </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+  <h3 id="assignment-1-introduction-to-cloud-computing-and-azure">Assignment 1: Introduction to Cloud Computing and
+    Azure</h3>
+  <p><strong>Objective:</strong><br>
+    This exercise will introduce you to the core concepts of cloud computing, its advantages, types of services,
+    and the role of cloud platforms like Microsoft Azure. By the end of this assignment, you will have a
+    fundamental understanding of cloud computing and how it differs from traditional computing models.</p>
+  <hr>
+  <h4 id="exercise-1-understanding-cloud-computing-basics"><strong>Exercise 1: Understanding Cloud Computing
+      Basics</strong></h4>
+  <ol>
+    <li>
+      <p><strong>What is Cloud Computing?</strong></p>
+      <ul>
+        <li>Define cloud computing in your own words.</li>
+        <li>Explain how cloud computing differs from traditional on-premises computing.</li>
+        <li>Discuss the key benefits of cloud computing (e.g., cost savings, scalability, global reach).</li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Key Cloud Service Models:</strong></p>
+      <ul>
+        <li>Briefly explain the three main service models in cloud computing:
+          <ul>
+            <li><strong>Infrastructure as a Service (IaaS)</strong></li>
+            <li><strong>Platform as a Service (PaaS)</strong></li>
+            <li><strong>Software as a Service (SaaS)</strong></li>
+          </ul>
+        </li>
+        <li>Provide one example of each service model.</li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Cloud Deployment Models:</strong></p>
+      <ul>
+        <li>Describe the following deployment models:
+          <ul>
+            <li><strong>Public Cloud</strong></li>
+            <li><strong>Private Cloud</strong></li>
+            <li><strong>Hybrid Cloud</strong></li>
+          </ul>
+        </li>
+        <li>Compare their advantages and disadvantages in terms of security, cost, and scalability.</li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Cloud Computing in Everyday Life:</strong></p>
+      <ul>
+        <li>Identify two cloud-based applications or services that you use in your daily life.</li>
+        <li>Describe how they use cloud technology to deliver services to users.</li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Introduction to Azure:</strong></p>
+      <ul>
+        <li>What is Microsoft Azure?</li>
+        <li>List and describe 2 or 3 services or features provided by Azure.</li>
+      </ul>
+    </li>
+  </ol>
+  <hr>
+  <h4 id="exercise-2-explore-azure"><strong>Exercise 2: Explore Azure</strong></h4>
+  <ol>
+    <li>
+      <p><strong>Create a Free Azure Account:</strong></p>
+      <p>If you don't have one already, create an Azure Student account. Azure offers 100$ credits for students to use
+        on all services.</p>
+      <ul>
+        <li>Navigate to the <a href="https://azure.microsoft.com/fr-fr/free/students">Azure Student Account page</a>.
+        </li>
+        <li>Follow the steps to create your account with your institutional email address.</li>
+      </ul>
+    </li>
+    <li>
+      <p><strong>Instructions:</strong></p>
+      <ul>
+        <li>After registration, sign in to the <a href="https://portal.azure.com/">Azure Portal</a>.</li>
+        <li>Navigate to `Subscriptions` section. What do you see?</li>
+        <li>In your own words, explain what an Azure <strong>Resource Group</strong> is.</li>
+        <li>Create a new resource group in your Azure portal and name it as per your choice.</li>
+        <li>Delete the resource group you just created.</li>
+      </ul>
+    </li>
+  </ol>
+  <hr>
+  <!-- 
+  <h4 id="exercise-3-cost-computing"><strong>Exercise 3: Cost Computing</strong></h4>
+  <p>Write a short essay (500–800 words) on the topic:</p>
+  <p><strong>“The Role of Cloud Computing in Modern Enterprises and its Impact on the Future of IT”</strong></p>
+  <ul>
+    <li>Discuss how cloud computing has transformed traditional IT infrastructure and development practices.</li>
+    <li>Highlight at least three industries that are significantly benefiting from cloud technologies.</li>
+   <li>Predict the future trends in cloud computing, such as the role of AI, edge computing, and multi-cloud
+      strategies.</li> 
+  </ul>
+  <hr>
+  <h3 id="submission-guidelines"><strong>Submission Guidelines:</strong></h3>
+  <ul>
+    <li>Complete all written responses and include screenshots where requested.</li>
+    <li>The essay should be submitted as a Word or PDF document.</li>
+    <li>All submissions should be uploaded to the course's learning management system by the due date.</li>
+  </ul>
+  <!-- <hr>
+  <h3 id="assessment-criteria"><strong>Assessment Criteria:</strong></h3>
+  <ul>
+    <li><strong>Understanding of Concepts (40%)</strong>: Clear explanation of cloud computing, service models, and
+      Azure services.</li>
+    <li><strong>Practical Task (20%)</strong>: Correctly creating a resource group on Azure.</li>
+    <li><strong>Essay Quality (30%)</strong>: Clarity, depth of research, and insights into the role of cloud computing
+      in modern businesses.</li>
+    <li><strong>Presentation and Structure (10%)</strong>: Well-structured assignment, free from grammatical errors,
+      with appropriate citations.</li>
+  </ul>
+  <hr>
+  <p>This exercise will give you a foundational understanding of cloud computing and how it powers services on platforms
+    like Microsoft Azure. Make sure to explore Azure hands-on and connect theory to practice as you go!</p> -->
+
+</body>
+
+</html>
