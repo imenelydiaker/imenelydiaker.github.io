@@ -20,7 +20,7 @@ Assignements
 [Assignement 2: Getting Strated with Azure]()  
 [Assignement 3: Azure Storage]()  
 [Assignement 4: Azure WebApp]()   
-[Assignement 5: Azure VM]() 
+[Assignement 5: Azure VM]()  
 [Assignement 6: Connecting the dots]()
 
 Documentation
