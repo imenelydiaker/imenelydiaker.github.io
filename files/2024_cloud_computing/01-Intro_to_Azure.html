@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud Computing - Assignment 2&colon; Introduction to Azure Principles</title>
+  <style>
+    /* From extension vscode.github */
+    /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+    .vscode-dark img[src$=\#gh-light-mode-only],
+    .vscode-light img[src$=\#gh-dark-mode-only],
+    .vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+    .vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+      display: none;
+    }
+  </style>
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    :root {
+      --color-note: #0969da;
+      --color-tip: #1a7f37;
+      --color-warning: #9a6700;
+      --color-severe: #bc4c00;
+      --color-caution: #d1242f;
+      --color-important: #8250df;
+    }
+  </style>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-note: #2f81f7;
+        --color-tip: #3fb950;
+        --color-warning: #d29922;
+        --color-severe: #db6d28;
+        --color-caution: #f85149;
+        --color-important: #a371f7;
+      }
+    }
+  </style>
+  <style>
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      color: inherit;
+      border-left: .25em solid #888;
+    }
+
+    .markdown-alert>:first-child {
+      margin-top: 0
+    }
+
+    .markdown-alert>:last-child {
+      margin-bottom: 0
+    }
+
+    .markdown-alert .markdown-alert-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      line-height: 1
+    }
+
+    .markdown-alert .markdown-alert-title .octicon {
+      margin-right: 0.5rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+    }
+
+    .markdown-alert.markdown-alert-note {
+      border-left-color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-note .markdown-alert-title {
+      color: var(--color-note);
+    }
+
+    .markdown-alert.markdown-alert-important {
+      border-left-color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-important .markdown-alert-title {
+      color: var(--color-important);
+    }
+
+    .markdown-alert.markdown-alert-warning {
+      border-left-color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-warning .markdown-alert-title {
+      color: var(--color-warning);
+    }
+
+    .markdown-alert.markdown-alert-tip {
+      border-left-color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-tip .markdown-alert-title {
+      color: var(--color-tip);
+    }
+
+    .markdown-alert.markdown-alert-caution {
+      border-left-color: var(--color-caution);
+    }
+
+    .markdown-alert.markdown-alert-caution .markdown-alert-title {
+      color: var(--color-caution);
+    }
+  </style>
+  <link href="./copy_button.css" rel="stylesheet">
+
+</head>
+
+<body class="vscode-body vscode-light">
+  <script type="text/javascript" src="./copy_button.js"></script>
+
+  <h1 id="cloud-computing-on-azure---assignment-2-introduction-to-azure-principles">Cloud Computing on Azure -
+    Assignment 2: Introduction to Azure Principles</h12>
+    <h4 id="objective"><strong>Objective</strong>:</h4>
+    <p>This assignment aims to familiarize you with fundamental Azure cloud computing concepts and the Azure portal,
+      helping you develop a basic understanding of Azure's core services and architecture. By the end of this exercise,
+      you will have explored the Azure platform, learned how to set up basic resources, and gained hands-on experience
+      with cloud management principles.</p>
+    <hr>
+    <!-- <h3 id="part-1-understanding-azure-core-services"><strong>Part 1: Understanding Azure Core Services</strong></h3>
+    <p>In this part, you'll explore Azure's core cloud service models and understand their relevance. These models are
+      Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).</p>
+    <ol>
+      <li>
+        <p><strong>Task</strong>:
+          Research and explain the following Azure service models:</p>
+        <ul>
+          <li><strong>IaaS</strong>: Describe how Azure provides IaaS and give one example of a service under this
+            model.</li>
+          <li><strong>PaaS</strong>: Explain how Azure offers PaaS and provide one example of a relevant Azure service.
+          </li>
+          <li><strong>SaaS</strong>: Describe SaaS on Azure and provide an example of an Azure SaaS solution.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Instructions</strong>:</p>
+        <ul>
+          <li>Use official Azure documentation or other credible sources to describe these services.</li>
+          <li>Include relevant diagrams where appropriate.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Deliverable</strong>:
+          A one-page report (maximum 500 words) explaining Azure IaaS, PaaS, and SaaS models with examples.</p>
+      </li>
+    </ol>
+    <hr> -->
+    <h3 id="part-1-exploring-azure-portal"><strong>Part 1: Exploring Azure Portal</strong></h3>
+
+
+    <h3 id="part-1-exploring-azure-storage-paas"><strong>Part 1: Exploring Azure Storage</strong></h3>
+    <ol>
+      <li>
+        <p><strong>Task</strong>:
+          Create a <strong>Storage Account</strong> in Azure to explore Azure Storage services.</p>
+      </li>
+      <li>
+        <p><strong>Instructions</strong>:</p>
+        <ul>
+          <li>In the Azure Portal, go to <strong>Storage Accounts</strong> and click on <strong>Create</strong>.</li>
+          <li>Set the following:
+            <ul>
+              <li><strong>Resource Group</strong>: Use the previously created resource group
+                (<code>CloudBasics_RG</code>).</li>
+              <li><strong>Storage Account Name</strong>: Choose a unique name (e.g., <code>cloudstorage123</code>).</li>
+              <li><strong>Region</strong>:Select a region.</li>
+              <li><strong>Redunduncy</strong>: Choose <strong>Locally redundant storage (LRS)</strong>.</li>
+              <!-- <li><strong>Performance/Access Tier</strong>: Select <strong>Standard</strong> performance and
+                <strong>Hot</strong> access tier.
+              </li> -->
+            </ul>
+          </li>
+          <li>Review and create the storage account.</li>
+          <li>After creation, navigate to the resource group you just created. how many resources are linked to it?</li>
+          <li>Navigate to the storage account you just created. What do you see under the <strong>Essentials</strong> panel?</li>
+          <li>Navigate to <strong>Tutorials</strong> panel and find the Azure stoarge documentation.</li>
+        </ul>
+      </li>
+      </li>
+    </ol>
+    <hr>
+    <h3 id="part-2-creating-a-virtual-machine-iaas"><strong>Part 2: Creating a Virtual Machine</strong></h3>
+    <ol>
+      <li>
+        <p><strong>Task</strong>:
+          In this step, you will deploy a basic Virtual Machine (VM) in Azure using the Azure Portal.</p>
+      </li>
+      <li>
+        <p><strong>Instructions</strong>:</p>
+        <ul>
+          <li>Go to Virtual Machine serviceon the azure portal.</li>
+          <li>Select <strong>deploy a Virtual Machine</strong>.</li>
+          <li>Click on <strong>Create</strong> and select <strong>Virtual Machine</strong>.</li>
+          <li>For configuration:
+            <ul>
+              <li><strong>Resource Group</strong>: Create a new resource group (e.g., <code>CloudBasics_RG</code>).</li>
+              <li><strong>VM Name</strong>: Use a unique name for your virtual machine (e.g., <code>CloudVM01</code>).
+              </li>
+              <li><strong>Region</strong>: Select a region (East US or any other region). Note that the pricing of VMs may change from a region to another. Checkout the price of B2pts v2 with Linux configuration in France vs East US <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/">here</a>.</li>
+              <li><strong>Image</strong>: Select a pre-built OS image like <strong>Ubuntu Server 20.04 LTS</strong>.
+              </li>
+              <li><strong>Size</strong>: Select an appropriate size. Your subscription will not allow you to use Bs1 machines, so just use the cheapest one you have in your list. Check the pricing before selcting one.</li>
+            </ul>
+          </li>
+          <li>Review and create the VM.</li>
+          <li>After the VM is created, navigate to the resource group you created. How many resources are linked to it?</li>
+        </ul>
+      </li>
+    </ol>
+    <hr>
+    <h3 id="part-3-accessing-and-managing-resources-using-azure-cli"><strong>Part 3: Accessing and Managing Resources
+        Using Azure CLI</strong></h3>
+    <ol>
+      <li>
+        <p><strong>Task</strong>:
+          Install and use the Azure Command-Line Interface (CLI) to manage Azure resources. This will introduce you to
+          programmatic interaction with Azure services.</p>
+      </li>
+      <li>
+        <p><strong>Instructions</strong>:</p>
+        <ul>
+          <li>Install the Azure CLI on your local machine (Windows, macOS, or Linux) by following the instructions from
+            the official <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI
+              documentation</a>.</li>
+          <li>Before continuing, define a CLI in your own words. What are the advantages compared to the portal?</li>
+          <li>Check everything is installed correctly by running the following command in your terminal:
+            <pre class="language-bash"><code>az --version
+</code></pre>
+          </li>
+          <li>After installation, log in to your Azure account using:
+            <pre class="language-bash"><code>az login
+</code></pre>
+          </li>
+          <li>Using Azure CLI, list all he resources of your subscription with:
+            <pre class="language-bash"><code>az resource list
+          <li>Using Azure CLI, list all your resource groups with:
+            <pre class="language-bash"><code>az group list --output table
+</code></pre>
+          </li>
+          <li>Retrieve details about your virtual machine with:
+            <pre class="language-bash"><code>az vm show --resource-group &lt;your-resource-group-name&gt; --name &lt;your-vm-name&gt; --output json
+</code></pre>
+          </li>
+          <li>Turn-off the VM using:
+            <pre class="language-bash"><code>az vm deallocate -g &lt;your-resource-group-name&gt; -n &lt;your-vm-name&gt;
+</code></pre>
+          </li>
+          <li>Delete the VM using the CLI (look at the <a
+              href="https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest">documentation</a> to find the
+            command).</li>
+            <li> What's the difference between <code>deallocate</code> and <code>delete</code> commands? </li>
+          <li>Delete the VM resource group using the CLI (make sure all the resources it contained are also deleted).
+          </li>
+        </ul>
+      </li>
+      <!-- <li>
+        <p><strong>Deliverable</strong>:</p>
+        <ul>
+          <li>Submit a screenshot of the CLI showing the list of resource groups and VM details.</li>
+        </ul>
+      </li> -->
+    </ol>
+    <hr>
+    <!-- <h3 id="submission-guidelines"><strong>Submission Guidelines:</strong></h3>
+<ul>
+<li>Submit all deliverables in a single compressed ZIP file, including screenshots and reports, by the due date.</li>
+<li>Ensure that all screenshots clearly show your Azure portal or CLI output, and reports should be concise and well-written.</li>
+</ul>
+<hr> -->
+    <!-- <h3 id="grading-criteria"><strong>Grading Criteria:</strong></h3>
+<ul>
+<li><strong>Part 1</strong>: Successful Azure account setup and portal access (10%)</li>
+<li><strong>Part 2</strong>: Explanation of IaaS, PaaS, and SaaS models (20%)</li>
+<li><strong>Part 3</strong>: VM setup and public IP submission (30%)</li>
+<li><strong>Part 4</strong>: Storage account creation and tier explanation (20%)</li>
+<li><strong>Part 5</strong>: CLI usage and resource management (20%)</li>
+</ul>
+<hr> -->
+    <h3 id="additional-resources"><strong>Additional Resources</strong></h3>
+    <ul>
+      <li>Azure Documentation: <a
+          href="https://docs.microsoft.com/en-us/azure/">https://docs.microsoft.com/en-us/azure/</a></li>
+      <li>Azure CLI Documentation: <a
+          href="https://docs.microsoft.com/en-us/cli/azure/">https://docs.microsoft.com/en-us/cli/azure/</a></li>
+      <li>Azure CLI VM Documentation: <a
+          href="https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest">https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest</a>
+      </li>
+    </ul>
+    <hr>
+    <p><strong>Note</strong>: It is essential to follow best practices, including shutting down your virtual machines
+      after use to avoid any unintended charges from your free tier credits.</p>
+    <hr>
+    <!-- <p>This exercise will lay the groundwork for more advanced Azure tasks, such as networking, security management, and automation, which will be covered in subsequent assignments.</p> -->
+</body>
+
+</html>

@@ -17,7 +17,7 @@ Slides [here]().
 Assignements
 ======
 [Assignement 1: Introduction to the cloud](../files/2024_cloud_computing/00-Getting_started_with_the_cloud.html)  
-[Assignement 2: Getting Strated with Azure]()  
+[Assignement 2: Getting Strated with Azure](../files/2024_cloud_computing/01-Intro_to_Azure.html)  
 [Assignement 3: Azure Storage]()  
 [Assignement 4: Azure WebApp]()   
 [Assignement 5: Azure VM]() 
