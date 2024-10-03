@@ -21,7 +21,9 @@ Assignements
 [Assignement 3: Azure Storage](../files/2024_cloud_computing/02-Blob_storage.html)  
 [Assignement 4: Azure WebApp]()   
 [Assignement 5: Azure VM]()  
-[Assignement 6: Connecting the dots]()
+[Assignement 6: Identity Management]()
+[Assignement 7: Connecting the dots]()
+[Assignement 8: Serverless Computing]()
 
 Documentation
 ======
