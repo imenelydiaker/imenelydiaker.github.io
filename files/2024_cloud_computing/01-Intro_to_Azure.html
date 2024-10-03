@@ -201,7 +201,8 @@
           </li>
           <li>Review and create the storage account.</li>
           <li>After creation, navigate to the resource group you just created. how many resources are linked to it?</li>
-          <li>Navigate to the storage account you just created. What do you see under the <strong>Essentials</strong> panel?</li>
+          <li>Navigate to the storage account you just created. What do you see under the <strong>Essentials</strong>
+            panel?</li>
           <li>Navigate to <strong>Tutorials</strong> panel and find the Azure stoarge documentation.</li>
         </ul>
       </li>
@@ -225,14 +226,20 @@
               <li><strong>Resource Group</strong>: Create a new resource group (e.g., <code>CloudBasics_RG</code>).</li>
               <li><strong>VM Name</strong>: Use a unique name for your virtual machine (e.g., <code>CloudVM01</code>).
               </li>
-              <li><strong>Region</strong>: Select a region (East US or any other region). Note that the pricing of VMs may change from a region to another. Checkout the price of B2pts v2 with Linux configuration in France vs East US <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/">here</a>.</li>
+              <li><strong>Region</strong>: Select a region (East US or any other region). Note that the pricing of VMs
+                may change from a region to another. Checkout the price of B2pts v2 with Linux configuration in France
+                vs East US <a href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/">here</a>.
+              </li>
               <li><strong>Image</strong>: Select a pre-built OS image like <strong>Ubuntu Server 20.04 LTS</strong>.
               </li>
-              <li><strong>Size</strong>: Select an appropriate size. Your subscription will not allow you to use Bs1 machines, so just use the cheapest one you have in your list. Check the pricing before selcting one.</li>
+              <li><strong>Size</strong>: Select an appropriate size. Your subscription will not allow you to use Bs1
+                machines, so just use the cheapest one you have in your list. Check the pricing before selcting one.
+              </li>
             </ul>
           </li>
           <li>Review and create the VM.</li>
-          <li>After the VM is created, navigate to the resource group you created. How many resources are linked to it?</li>
+          <li>After the VM is created, navigate to the resource group you created. How many resources are linked to it?
+          </li>
         </ul>
       </li>
     </ol>
@@ -262,6 +269,7 @@
           </li>
           <li>Using Azure CLI, list all he resources of your subscription with:
             <pre class="language-bash"><code>az resource list
+            </code></pre>
           <li>Using Azure CLI, list all your resource groups with:
             <pre class="language-bash"><code>az group list --output table
 </code></pre>
@@ -277,7 +285,7 @@
           <li>Delete the VM using the CLI (look at the <a
               href="https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest">documentation</a> to find the
             command).</li>
-            <li> What's the difference between <code>deallocate</code> and <code>delete</code> commands? </li>
+          <li> What's the difference between <code>deallocate</code> and <code>delete</code> commands? </li>
           <li>Delete the VM resource group using the CLI (make sure all the resources it contained are also deleted).
           </li>
         </ul>
