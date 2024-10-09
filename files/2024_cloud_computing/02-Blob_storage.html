@@ -136,8 +136,8 @@
       color: var(--color-caution);
     }
   </style>
-  
-    <link rel="stylesheet" href="./copy_button.css">
+
+  <link rel="stylesheet" href="./copy_button.css">
 
 </head>
 
@@ -146,11 +146,11 @@
     id="cloud-computing-on-azure---assignment-3-working-with-azure-blob-storage-and-connecting-an-application-to-blob-via-virtual-machine">
     Cloud Computing on Azure - Assignment 3: Working with Azure Blob Storage</h3>
   <h4 id="objective"><strong>Objective</strong>:</h4>
-  <p>This assignment focuses on Azure Blob Storage and demonstrates how to integrate a cloud-based application with Blob
-    storage through a virtual machine (VM). Students will learn how to create and manage Blob storage, upload and
-    retrieve data programmatically, and securely connect a VM to Blob storage using Azure SDKs.</p>
+  <p>This assignement will guide you through Azure Storage service. You will manipulate Blob objects using the Azure portal, the CLI and the Python SDK.</p>
   <hr>
-  <h3 id="part-1-setting-up-azure-blob-storage"><strong>Part 1: Setting Up Azure Blob Storage using the Portal</strong></h3>
+  <h3 id="part-1-setting-up-azure-blob-storage"><strong>Part 1: Managing Files in Blob
+    Storage using Azure Portal</strong>
+  </h3>
   <ol>
     <li>
       <p><strong>Task</strong>:
@@ -170,24 +170,24 @@
             <li><strong>Replication</strong>: Choose <strong>Locally Redundant Storage (LRS)</strong>.</li>
           </ul>
         </li>
-        <li>Once the account is created, navigate to the <strong>Containers</strong> section and create a new container:
-          <ul>
-            <li><strong>Container Name</strong>: Use a unique name (e.g., <code>myfiles</code>).</li>
-            <li><strong>Public Access Level</strong>: Set to <strong>Private (no anonymous access)</strong>.</li>
-          </ul>
-        </li>
-        <li>Once the container is created, create a file using <code>touch file.txt</code>, fill it with whatever you prefer and upload it to the blob storage via the portal.</li>
+        <li>Once the account is created, navigate to the <strong>Containers</strong> section in Blob Services and create
+          a new container, use a unique name (e.g., <code>2024-10-10-container-1</code>).</li>
+        <li>Once the container is created, create a file locally using <code>touch file.txt</code> in your
+          terminal/using you laptop GUI, fill it with whatever you prefer and upload it to the blob storage via the
+          portal.</li>
+      </ul>
+    <li><strong>Questions</strong>:
+      <ul>
+        <li>What's a Blob?</li>
+        <li>What's the access tier of the file you just uploaded?</li>
+        <li>What's the difference between all access tiers?</li>
       </ul>
     </li>
-    <!-- <li>
-      <p><strong>Deliverable</strong>:</p>
-      <ul>
-        <li>Submit a screenshot showing the newly created storage account and container.</li>
-      </ul>
-    </li> -->
+    </ul>
+    </li>
   </ol>
   <hr>
-  <h3 id="part-2-uploading-and-managing-files-in-blob-storage"><strong>Part 2: Uploading and Managing Files in Blob
+  <h3 id="part-2-uploading-and-managing-files-in-blob-storage"><strong>Part 2: Managing Files in Blob
       Storage using the CLI</strong></h3>
   <ol>
     <li>
@@ -195,237 +195,72 @@
         Upload files to Azure Blob Storage using the Azure portal and Azure CLI.</p>
     </li>
     <li>
-      <p><strong>Instructions</strong>:</p>
+      <p><strong>Instructions</strong>: All the following should be done using the CLI.</p>
       <ul>
-        <li>In the Azure portal, upload at least two sample files (e.g., text files, images) into the container
-          (<code>myfiles</code>) you created earlier.</li>
-        <li>Next, use the following commands to upload another file:
-          <pre><code class="language-bash">az storage blob upload \
-  --account-name &lt;your-storage-account-name&gt; \
-  --container-name &lt;your-container-name&gt; \
-  --name &lt;blob-name&gt; \
-  --file &lt;local-file-path&gt; \
-  --auth-mode login
-</code></pre>
-        </li>
-        <li>Verify the upload by listing the contents of the Blob container using:
-          <pre><code class="language-bash">az storage blob list \
-  --account-name &lt;your-storage-account-name&gt; \
-  --container-name &lt;your-container-name&gt; \
-  --output table
-</code></pre>
-        </li>
-        <li>Download the file you uploaded to the storage in Part 1 using the CLI.</li>
-        <li>Copy the previous container to a new one using the CLI. All contents shoould be copied.</li>
+        <li>Create a new container in the storage account you created with the portal in Part 1. Name the container as
+          you like (e.g. <code>2024-10-10-container-2</code>).</li>
+        <li>List all the containers in your storage account in a table. How many containers do you see?</li>
+        <li>Download the file you uploaded to the storage in Part 1 in a file named <code>downloaded_file.txt</code>.</li>
+        <li>Next, upload <code>file.txt</code> you previously created to the new new container. What's the
+          output of the command?</li>
+        <li>Now, upload all files of the archive you can find <a href="">here</a> to the new new container. What's the output of the command?</li>
+        <li>Verify the upload by listing the contents of the container (<code>2024-10-10-container-2</code>).</li>
+        <li>Copy the previous container to a new one (<code>2024-10-10-container-3</code>) using the CLI. All objects inside the container should be copied.</li>
+        <li>Delete the container created in Part 1 (<code>2024-10-10-container-1</code>).</li>
       </ul>
     </li>
-    <!-- <li>
-      <p><strong>Deliverable</strong>:</p>
-      <ul>
-        <li>Submit a screenshot of the uploaded files visible in the Azure portal and the CLI output showing the
-          uploaded blobs.</li>
-        <li>Briefly explain the importance of choosing the correct <strong>Replication Strategy</strong> (e.g., LRS vs.
-          GRS) for different use cases.</li>
-      </ul>
-    </li> -->
+    <li>
+      Documentation: <a href="https//learn.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest">az storage container</a> and
+      <a href="https://learn.microsoft.com/en-us/cli/azure/storage/blob?view=azure-cli-latest">az storage blob</a>.
+    </li>
   </ol>
   <hr>
-  <h3 id="part-3-downloading-files-from-blob-storage"><strong>Part 3: Downloading Files from Blob Storage</strong></h3>
+  <h3 id="part-3-downloading-files-from-blob-storage"><strong>Part 3: Managing Files in Blob using Python SDK</strong></h3>
   <ol>
     <li>
       <p><strong>Task</strong>:
-        Extend the application to download a file from Blob Storage to the VM.</p>
+        Upload and download files to storage account using Python SDK.</p>
     </li>
     <li>
       <p><strong>Instructions</strong>:</p>
       <ul>
-        <li>Create a Python script and add the ability to download a blob:
+        <li>Create a virtual environment using:
+          <pre><code>python -m venv .venv</code></pre>
+          Then activate your venv using:
+          <pre><code>source .venv/bin/activate</code></pre>
+        </li>
+        <li>Install the <a href="https://pypi.org/project/azure-identity/">Azure Identity client library</a> for Python:
+          <pre><code>pip install azure-identity</code></pre>
+        <li>Install the Azure Storage Blob client library for Python:
+          <pre><code class="language-bash">pip install azure-storage-blob</code></pre>
+        </li>
+        <li>Create a Python script to authenticate into your Azure account and connect to your blob storage account:
+          <pre><code class="language-python"><span class="hljs-keyword">from</span> azure.identity <span class="hljs-keyword">import</span> DefaultAzureCredential
+<span class="hljs-keyword">from</span> azure.storage.blob <span class="hljs-keyword">import</span> BlobServiceClient
+
+# Acquire a credential object
+credential = DefaultAzureCredential()
+
+blob_service_client = BlobServiceClient(account_url=<span class="hljs-string">&quot;https://my_account_name.blob.core.windows.net&quot;</span>, credential=credential)</code></pre>
+        </li>
+        <li>Add to your script the ability to download a blob:
           <pre><code class="language-python">download_file_path = <span class="hljs-string">&quot;downloaded_from_blob.txt&quot;</span>
 <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(download_file_path, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> download_file:
     download_file.write(blob_client.download_blob().readall())
 
 <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Blob <span class="hljs-subst">{blob_name}</span> downloaded to <span class="hljs-subst">{download_file_path}</span>&quot;</span>)
 </code></pre>
-Note: you need to log into your azure account using Python.
         </li>
-        <li>Run the script to download the file you uploaded in <strong>Part 2</strong>.</li>
-        <li>What's the difference between an SDK and a CLI?</li>
-      </ul>
-    </li>
-    <!-- <li>Briefly explain how <strong>authentication and authorization</strong> play a role in securing access to
-      Azure Blob Storage, referencing the use of <strong>Shared Access Signatures (SAS)</strong> or <strong>Access
-        Keys</strong>.</li> -->
-    <!-- <li>
-      <p><strong>Deliverable</strong>:</p>
-      <ul>
-        <li>Submit a screenshot showing the file downloaded to your VM and a confirmation message from the script.</li>
-        
-      </ul>
-    </li> -->
-  </ol>
-  <hr>
-  <!-- <h3 id="part-4-connecting-a-virtual-machine-to-blob-storage-via-azure-sdk"><strong>Part 4: Connecting a Virtual
-    Machine to Blob Storage via Azure SDK</strong></h3>
-<ol>
-  <li>
-    <p><strong>Task</strong>:
-      Write a simple application that connects a Virtual Machine (VM) to Azure Blob Storage using Azure SDK for Python
-      (or any preferred language).</p>
-  </li>
-  <li>
-    <p><strong>Instructions</strong>:</p>
-    <p><strong>Step 1: Set up a new Virtual Machine</strong></p>
-    <ul>
-      <li>Navigate to <strong>Virtual Machines</strong> and create a new VM if you haven't done so already.
-        <ul>
-          <li><strong>Resource Group</strong>: Use <code>CloudBasics_RG</code>.</li>
-          <li><strong>VM Name</strong>: (e.g., <code>BlobVM</code>).</li>
-          <li><strong>Image</strong>: Choose <strong>Ubuntu Server 20.04 LTS</strong> or <strong>Windows
-              Server</strong>.</li>
-          <li><strong>Size</strong>: Choose an appropriate size (e.g., B1s for cost-efficiency).</li>
-          <li><strong>Username and Password</strong>: Set up an admin account.</li>
-        </ul>
-      </li>
-      <li>Ensure the VM is running and take note of its <strong>public IP address</strong>.</li>
-    </ul>
-    <p><strong>Step 2: Install Azure SDK and Set Up Application</strong></p>
-    <ul>
-      <li>SSH into your VM using the Azure portal or command-line interface:
-        <pre><code class="language-bash">ssh &lt;admin-username&gt;@&lt;VM-public-IP&gt;
-</code></pre>
-      </li>
-      <li>Install Python 3 and necessary dependencies (or set up your preferred language environment):
-        <pre><code class="language-bash">sudo apt update
-sudo apt install python3-pip
-pip3 install azure-storage-blob
-</code></pre>
-      </li>
-      <li>Create a Python script (e.g., <code>upload_to_blob.py</code>) that connects to the Azure Blob Storage
-        account and uploads a file:
-        <pre><code class="language-python"><span class="hljs-keyword">from</span> azure.storage.blob <span class="hljs-keyword">import</span> BlobServiceClient, BlobClient, ContainerClient
-
-<span class="hljs-comment"># Azure storage account connection string</span>
-connect_str = <span class="hljs-string">&quot;&lt;your-connection-string&gt;&quot;</span>
-
-<span class="hljs-comment"># Blob service client</span>
-blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-
-<span class="hljs-comment"># Container and blob details</span>
-container_name = <span class="hljs-string">&quot;myfiles&quot;</span>
-blob_name = <span class="hljs-string">&quot;uploaded_from_vm.txt&quot;</span>
-local_file_path = <span class="hljs-string">&quot;example.txt&quot;</span>
-
-<span class="hljs-comment"># Create a blob client and upload file</span>
-blob_client = blob_service_client.get_blob_client(container=container_name, blob=blob_name)
-<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(local_file_path, <span class="hljs-string">&quot;rb&quot;</span>) <span class="hljs-keyword">as</span> data:
-  blob_client.upload_blob(data)
-
-<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;File <span class="hljs-subst">{local_file_path}</span> uploaded to container <span class="hljs-subst">{container_name}</span> as <span class="hljs-subst">{blob_name}</span>&quot;</span>)
-</code></pre>
-      </li>
-      <li>Use the Azure portal to retrieve the <strong>connection string</strong> for your storage account and replace
-        the placeholder in the script.</li>
-      <li>Create a sample text file (<code>example.txt</code>) and run the script:
-        <pre><code class="language-bash">python3 upload_to_blob.py
-</code></pre>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Deliverable</strong>:</p>
-    <ul>
-      <li>Submit a screenshot of the script output showing successful file upload.</li>
-      <li>Submit a screenshot from the Azure portal confirming that the file <code>uploaded_from_vm.txt</code> is
-        present in your Blob container.</li>
-      <li>Briefly explain how the <strong>Azure Blob Storage SDK</strong> simplifies the process of interacting with
-        storage resources programmatically.</li>
-    </ul>
-  </li>
-</ol>
-<hr>
-  <h3 id="part-5-securing-access-with-azure-managed-identities"><strong>Part 5: Securing Access with Azure Managed
-      Identities</strong></h3>
-  <ol>
-    <li>
-      <p><strong>Task</strong>:
-        Implement a <strong>Managed Identity</strong> for the virtual machine to securely access Blob Storage without
-        hard-coding access keys or connection strings.</p>
-    </li>
-    <li>
-      <p><strong>Instructions</strong>:</p>
-      <ul>
-        <li>Navigate to your <strong>Virtual Machine</strong> in the Azure portal.</li>
-        <li>Under <strong>Settings</strong>, select <strong>Identity</strong>, and enable <strong>System Assigned
-            Managed Identity</strong>.</li>
-        <li>Next, navigate to your <strong>Storage Account</strong> and under <strong>Access Control (IAM)</strong>,
-          assign the <strong>Storage Blob Data Contributor</strong> role to your VM's managed identity.</li>
-        <li>Modify your Python script to use <strong>Azure Identity</strong> to authenticate the VM with the Blob
-          service:
-          <pre><code class="language-python"><span class="hljs-keyword">from</span> azure.identity <span class="hljs-keyword">import</span> DefaultAzureCredential
-<span class="hljs-keyword">from</span> azure.storage.blob <span class="hljs-keyword">import</span> BlobServiceClient
-
-<span class="hljs-comment"># Use the VM&#x27;s managed identity to authenticate</span>
-credential = DefaultAzureCredential()
-blob_service_client = BlobServiceClient(account_url=<span class="hljs-string">&quot;https://&lt;your-storage-account-name&gt;.blob.core.windows.net/&quot;</span>, credential=credential)
-
-<span class="hljs-comment"># Rest of the script remains the same for uploading/downloading blobs</span>
-</code></pre>
-        </li>
-        <li>Test the script to ensure that the VM can still upload and download files using the managed identity for
-          authentication.</li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>Deliverable</strong>:</p>
-      <ul>
-        <li>Submit a screenshot showing the successful upload or download of a blob using the managed identity.</li>
-        <li>Briefly explain the benefits of using <strong>Managed Identities</strong> over hard-coded connection strings
-          or keys.</li>
+        <li>Run the script to download the files you uploaded in <strong>Part 2</strong> to container (<code>2024-10-10-container-2</code>).</li>
+        <li>Update your script to create a new container (<code>2024-10-10-container-4</code>) if it does not exist.</li>
+        <li>Update your script to upload files to a given blob container, then re-upload all the files of the archive to (<code>2024-10-10-container-4</code>)</li>
+        <li>Delete all containers you created in this assignement using Python (<code>2024-10-10-container-2</code>, <code>2024-10-10-container-3</code>, <code>2024-10-10-container-4</code>).</li>
+        <li>What's the difference between a SDK and a CLI?</li>
       </ul>
     </li>
   </ol>
-  <hr> 
-  <h3 id="part-6-monitoring-blob-storage-and-costs"><strong>Part 6: Monitoring Blob Storage and Costs</strong></h3>
-  <ol>
-    <li>
-      <p><strong>Task</strong>:
-        Set up monitoring and cost management for your Blob Storage to track data usage and storage costs.</p>
-    </li>
-    <li>
-      <p><strong>Instructions</strong>:</p>
-      <ul>
-        <li>Navigate to your <strong>Storage Account</strong> in the Azure portal.</li>
-        <li>Under <strong>Monitoring</strong>, view <strong>Metrics</strong> for data transactions (e.g., number of
-          read/write operations).</li>
-        <li>Configure <strong>Alerts</strong> to notify you if the storage cost or data transactions exceed a predefined
-          threshold.</li>
-        <li>Under <strong>Cost Management</strong>, review the <strong>Storage Account costs</strong> and explore how
-          data transfer and storage volume impact costs.</li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>Deliverable</strong>:</p>
-      <ul>
-        <li>Submit a screenshot showing the <strong>Metrics</strong> and <strong>Cost Management</strong> dashboard for
-          your Blob Storage.</li>
-        <li>Briefly explain the importance of monitoring and optimizing storage costs in cloud environments.</li>
-      </ul>
-    </li>
-  </ol> 
-  <hr> -->
-  <!-- <h3 id="submission-guidelines"><strong>Submission Guidelines:</strong></h3>
-  <ul>
-    <li>Submit all deliverables in a compressed ZIP file, including screenshots and explanations.</li>
-    <li>Ensure that all screenshots clearly display your Azure portal or command-line output.</li>
-  </ul> -->
-  <!-- <hr>
-  <h3 id="grading-criteria"><strong>Grading Criteria:</strong></h3>
-  <ul>
-    <li><strong>Part 1</strong>: Blob storage account and container creation (10%)</li>
-    <li><strong>Part 2</strong>: Uploading and managing files in Blob storage (20%)</li>
-    <li><strong>Part 3</strong>: Application integration with Blob storage via VM (25%)</li>
-    <li><strong>Part 4</strong>: Downloading files from Blob storage (15%)</li>
-  </ul> -->
+  <hr>
+  
 </body>
 
 </html>

@@ -19,11 +19,12 @@ Assignements
 [Assignement 1: Introduction to the cloud](../files/2024_cloud_computing/00-Getting_started_with_the_cloud.html)  
 [Assignement 2: Getting Strated with Azure](../files/2024_cloud_computing/01-Intro_to_Azure.html)  
 [Assignement 3: Azure Storage](../files/2024_cloud_computing/02-Blob_storage.html)  
-[Assignement 4: Azure WebApp]()   
+[Assignement 4: Azure WebApp](https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-python?tabs=fastapi%2Cmac-linux%2Cazure-cli%2Cazure-cli-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli)   
+[Assignement 4: Azure WebApp 2]()   
 [Assignement 5: Azure VM]()  
-[Assignement 6: Identity Management]()
-[Assignement 7: Connecting the dots]()
-[Assignement 8: Serverless Computing]()
+[Assignement 6: Identity Management]()  
+[Assignement 7: Connecting the dots]()  
+[Assignement 8: Serverless Computing]()  
 
 Documentation
 ======
