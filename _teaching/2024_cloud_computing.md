@@ -12,7 +12,7 @@ Introduction to Cloud Computing using Azure.
 
 Slides
 ======
-Slides [here]().
+Slides [here](https://docs.google.com/presentation/d/1Mp2NJSeZfB9MrSVIWsranLJNCt-EaCrWlmbiap9mrNM/edit?usp=drivesdk).
 
 Assignements
 ======
