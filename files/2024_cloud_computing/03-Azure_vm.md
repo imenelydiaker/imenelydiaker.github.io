@@ -31,7 +31,7 @@ This assignment is designed to introduce you to Azure Virtual Machines, covering
    - Download the SSH key.
 
 5. **Document Your VM Configuration**
-   - Record the following details for submission:
+   - Record the following details:
      - VM name
      - Resource group
      - Region
@@ -146,7 +146,7 @@ This assignment is designed to introduce you to Azure Virtual Machines, covering
 
 ---
 
-### **Task 5: Configure Network Security Group (NSG) Rules**
+### Task 5: Configure Network Security Group (NSG) Rules
 
 1. **Modify NSG Rules**
    - Go to the **Networking** settings of your VM.
@@ -155,11 +155,17 @@ This assignment is designed to introduce you to Azure Virtual Machines, covering
 
 ---
 
-### **Task 6: Clean Up Resources**
+### Task 6: Clean Up Resources
 
 1. **Delete the VM and Associated Resources**
    - Go to **Resource Groups** and select `RG-AzureVM-Assignment`.
    - Click **Delete Resource Group** to delete all resources created for this assignment.
+
+---
+
+### Deploy your own wesbsite
+
+Deploy the website your created in the previous assignement on port 5222.
 
 ---
 
