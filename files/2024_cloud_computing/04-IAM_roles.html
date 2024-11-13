@@ -285,11 +285,11 @@ Follow the steps to understand the example. After the step 4, navigate to &quot;
 <li>When clicking on &quot;Azure role assignments&quot;, what so you see? What does this section list?</li>
 </ul>
 <h4 id="8-assign-roles-to-your-webapp">8. <strong>Assign roles to your WebApp</strong></h4>
-<p>Your WebApp doesn't have any role assignement for the moment, so technically, it can't access anything.</p>
+<p>Your WebApp doesn't have any role assignment for the moment, so technically, it can't access anything.</p>
 <p>The WebApp needs access to ACR to pull the latest image of the app you pushed and deploy it. Let's grant it the permission:</p>
 <ul>
 <li>Navigate to your <code>appRegistry</code> and look for &quot;Access Control (IAM)&quot;.</li>
-<li>Look for &quot;Grant access to this resource&quot; and click on &quot;Add role assignement&quot;.</li>
+<li>Look for &quot;Grant access to this resource&quot; and click on &quot;Add role assignment&quot;.</li>
 <li>You should see a list of roles, select <code>AcrPull</code> and click on Next.</li>
 <li>Keep &quot;Assigned access to&quot; to &quot;Managed Identity&quot;, then click on &quot;+ Select memebers&quot;.</li>
 <li>Set &quot;Managed Identity&quot; to &quot;App Service&quot;, then look for your app by its name in the search bar, select it.</li>
@@ -310,9 +310,9 @@ Follow the steps to understand the example. After the step 4, navigate to &quot;
 <li>Save the settings of your WebApp.</li>
 </ul>
 <p>Wait few minutes and visit the URL of your WebApp, you may need to restrat the app.</p>
-<p><strong>Question:</strong> What did you understand from this assignement?</p>
+<p><strong>Question:</strong> What did you understand from this assignment?</p>
 <h3 id="task-2-deploy-your-website-using-containers"><strong>Task 2: Deploy your Website using Containers</strong></h3>
-<p>Use the website you developed in previous assignements to create a Docker image and push it to ACR. Then, deploy the app to a WebApp (as in Task 1).</p>
+<p>Use the website you developed in previous assignments to create a Docker image and push it to ACR. Then, deploy the app to a WebApp (as in Task 1).</p>
 <p>Try to give a unique name for yoru WebAppp anddeactivate the <code>Unique default hostname (preview) on</code> option (e.g., you can try: &lt;name_oo_your_app&gt;_your_name).</p>
 <p>Once deployed, ask your classmate to visit your website!</p>
 <h3 id="troubleshooting">Troubleshooting:</h3>

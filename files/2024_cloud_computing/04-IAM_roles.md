@@ -118,12 +118,12 @@ You need to allow your WebApp to pull images from ACR in order to deploy it.
 * When clicking on "Azure role assignments", what so you see? What does this section list?
 
 #### 8. **Assign roles to your WebApp**
-Your WebApp doesn't have any role assignement for the moment, so technically, it can't access anything.
+Your WebApp doesn't have any role assignment for the moment, so technically, it can't access anything.
 
 The WebApp needs access to ACR to pull the latest image of the app you pushed and deploy it. Let's grant it the permission:
 
 * Navigate to your ``appRegistry`` and look for "Access Control (IAM)".
-* Look for "Grant access to this resource" and click on "Add role assignement".
+* Look for "Grant access to this resource" and click on "Add role assignment".
 * You should see a list of roles, select ``AcrPull`` and click on Next.
 * Keep "Assigned access to" to "Managed Identity", then click on "+ Select memebers".
 * Set "Managed Identity" to "App Service", then look for your app by its name in the search bar, select it.
@@ -149,12 +149,12 @@ All permissions granted, now make the WebApp deploy the image you just pushed to
 
 Wait few minutes and visit the URL of your WebApp, you may need to restrat the app.
 
-**Question:** What did you understand from this assignement?
+**Question:** What did you understand from this assignment?
 
 
 ### **Task 2: Deploy your Website using Containers**
 
-Use the website you developed in previous assignements to create a Docker image and push it to ACR. Then, deploy the app to a WebApp (as in Task 1). 
+Use the website you developed in previous assignments to create a Docker image and push it to ACR. Then, deploy the app to a WebApp (as in Task 1). 
 
 Try to give a unique name for yoru WebAppp anddeactivate the `Unique default hostname (preview) on` option (e.g., you can try: <name_oo_your_app>_your_name).  
 
