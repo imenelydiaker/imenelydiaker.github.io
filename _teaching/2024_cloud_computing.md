@@ -22,7 +22,7 @@ Assignements
 [Assignement 4: Azure WebApp](https://learn.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=fastapi%2Cwindows%2Cazure-portal%2Cazure-cli-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#sample-application)    
 [Assignement 5: Azure WebApp 2]()   
 [Assignement 6: Azure VM](../files/2024_cloud_computing/03-Azure_vm.html)  
-[Assignement 7: Identity Management]()  
+[Assignement 7: Identity Management](../files/2024_cloud_computing/04-IAM_roles.html)  
 [Assignement 8: Connecting the dots]()  
 [Assignement 9: Serverless Computing]()  
 

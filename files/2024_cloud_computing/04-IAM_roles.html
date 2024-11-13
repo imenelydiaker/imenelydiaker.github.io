@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Assignment&colon; Permissions and Identity Management</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+  color: #9a6700;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="assignment-permissions-and-identity-management">Assignment: Permissions and Identity Management</h1>
+<h4 id="objective"><strong>Objective</strong></h4>
+<p>This assignment is designed to introduce you to Identity Managament and IAM Roles, covering the setup of a WebApp and a Container Registry (ACR), configuration, and basic management of apps' identity and roles to connect both services. By the end of this assignment, you will understand how to connect at least two Azure services to allow them to communicate.</p>
+<hr>
+<h3 id="task-1-deploy-a-simple-webapp-from-docker-image"><strong>Task 1: Deploy a simple WebApp from Docker image</strong></h3>
+<h4 id="1-log-in-to-azure">1. <strong>Log in to Azure</strong></h4>
+<p>Navigate to your Azure portal and login.</p>
+<h4 id="2-create-a-resource-group">2. <strong>Create a resource group</strong></h4>
+<p>Name your resource group <code>simpleAppRG</code></p>
+<h4 id="3-create-a-webapp">3. <strong>Create a WebApp</strong></h4>
+<p>Go to App Services and create a new Web app. Set the following configurations:</p>
+<ul>
+<li>Choose the same resource group as previously.</li>
+<li>Name your web app: <code>simple-app</code>.</li>
+<li>Publish: <code>Container</code>.</li>
+<li>Operating System: Linux.</li>
+<li>Region: France Central.</li>
+<li>Pricing Plan: Choose Free F1.</li>
+</ul>
+<p>Go to the Next step, configure the container:</p>
+<ul>
+<li>Set &quot;Image Source&quot; to <code>Quickstart</code> (default option).</li>
+<li>Click on `Review + create, then &quot;create&quot;.</li>
+</ul>
+<p><strong>Question:</strong> Wait few minutes then visit the URL of your WebApp, what do you see? Check the logs in the Deployment center to inspect what happened.</p>
+<h4 id="4-create-a-container-registry">4. <strong>Create a Container Registry</strong></h4>
+<p>Look for Container Registries service and create a new Registry.</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>Use the following configuration:</p>
+<ul>
+<li>Selected the resource group you just created.</li>
+<li>Name the registry: <code>appsRegistry</code>.</li>
+<li>Location: France Central.</li>
+<li>Pricing plan : Standard.</li>
+<li>Click on <code>Review + create</code> and create your registry.</li>
+</ul>
+<p><strong>Question:</strong> What's a container registry?</p>
+<h4 id="5-create-a-simple-app">5. <strong>Create a simple app</strong></h4>
+<p>First, let's create a simple app. On your computer:</p>
+<ul>
+<li>Create a new directory for your FastAPI app:</li>
+</ul>
+<pre><code class="language-bash"><span class="hljs-built_in">mkdir</span> ~/simple-app
+<span class="hljs-built_in">cd</span> ~/simple-app
+</code></pre>
+<ul>
+<li>Create a file named <code>main.py</code> with the following FastAPI code:</li>
+</ul>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> fastapi <span class="hljs-keyword">import</span> FastAPI
+
+app = FastAPI()
+
+<span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/&quot;</span></span>)</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">root</span>():
+    <span class="hljs-keyword">return</span> {<span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;Hello, Azure!&quot;</span>}
+</code></pre>
+<p>Feel free to update this app! Show me your creativity :)</p>
+<ul>
+<li>Create the <code>Dockerfile</code>. In the <code>simple-app</code> directory, create a file named <code>Dockerfile</code> with the following content:</li>
+</ul>
+<pre><code class="language-Dockerfile"><span class="hljs-comment"># Use an official Python runtime as a parent image</span>
+<span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3.9</span>
+
+<span class="hljs-comment"># Set the working directory</span>
+<span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span>
+
+<span class="hljs-comment"># Copy the current directory contents into the container at /app</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> . /app</span>
+
+<span class="hljs-comment"># Install FastAPI and Uvicorn</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> pip install fastapi uvicorn</span>
+
+<span class="hljs-comment"># Make port 8080 available to the world outside this container</span>
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">8080</span>
+
+<span class="hljs-comment"># Run app with Uvicorn on container startup</span>
+<span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;uvicorn&quot;</span>, <span class="hljs-string">&quot;main:app&quot;</span>, <span class="hljs-string">&quot;--host&quot;</span>, <span class="hljs-string">&quot;0.0.0.0&quot;</span>, <span class="hljs-string">&quot;--port&quot;</span>, <span class="hljs-string">&quot;8080&quot;</span>]</span>
+</code></pre>
+<ul>
+<li>Build the Docker image:</li>
+</ul>
+<pre><code class="language-bash">docker build -t fastapi-app .
+</code></pre>
+<ul>
+<li>Run the Docker container:</li>
+</ul>
+<pre><code class="language-bash">docker run -d -p 8080:8080 fastapi-app
+</code></pre>
+<ul>
+<li>Visit your website at <a href="http://localhost:8080">http://localhost:8080</a>.</li>
+</ul>
+<h4 id="6-push-the-image-to-the-registry">6. <strong>Push the image to the registry</strong></h4>
+<p>Navigate to your <code>appsRegistry</code> resource. In &quot;Overview&quot;, look for &quot;Get Started&quot; -&gt; &quot;Push an image&quot;.
+Follow the steps to understand the example. After the step 4, navigate to &quot;Repositories&quot;, what do you see?</p>
+<p>Now using the same steps to push your local Docker image to your ACR registry. Push the image to <code>simpleApp</code> repository.</p>
+<p><strong>Questions:</strong> Why did you have to run <code>az acr login</code> command? What does the step 3 do? What about step 4?</p>
+<h4 id="7-create-an-identity-for-your-webapp">7. <strong>Create an Identity for your WebApp</strong></h4>
+<p>You need to allow your WebApp to pull images from ACR in order to deploy it.</p>
+<ul>
+<li>Navigate to your WebApp. Look for <code>Identity</code>.</li>
+<li>Enable &quot;System Identity&quot;, then click on Save.</li>
+</ul>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>What's the difference between <code>System Identity</code> and <code>User Identity</code>?</li>
+<li>When clicking on &quot;Azure role assignments&quot;, what so you see? What does this section list?</li>
+</ul>
+<h4 id="8-assign-roles-to-your-webapp">8. <strong>Assign roles to your WebApp</strong></h4>
+<p>Your WebApp doesn't have any role assignement for the moment, so technically, it can't access anything.</p>
+<p>The WebApp needs access to ACR to pull the latest image of the app you pushed and deploy it. Let's grant it the permission:</p>
+<ul>
+<li>Navigate to your <code>appRegistry</code> and look for &quot;Access Control (IAM)&quot;.</li>
+<li>Look for &quot;Grant access to this resource&quot; and click on &quot;Add role assignement&quot;.</li>
+<li>You should see a list of roles, select <code>AcrPull</code> and click on Next.</li>
+<li>Keep &quot;Assigned access to&quot; to &quot;Managed Identity&quot;, then click on &quot;+ Select memebers&quot;.</li>
+<li>Set &quot;Managed Identity&quot; to &quot;App Service&quot;, then look for your app by its name in the search bar, select it.</li>
+<li>Click on &quot;Review + assign&quot;.</li>
+</ul>
+<p><strong>Note:</strong> A rule to always have in mind when you use the cloud: always give users and applications the least privileges. It is for security reasons, the less you open your gates the safer it is.</p>
+<p><strong>Questions:</strong> Go back to your WebApp and check &quot;Azure role assignments&quot; again, what do you see?</p>
+<h4 id="9-make-the-webapp-deploy-the-image-from-the-registry">9. <strong>Make the Webapp deploy the image from the registry</strong></h4>
+<p>All permissions granted, now make the WebApp deploy the image you just pushed to the registry.</p>
+<ul>
+<li>Go back to yoru WebApp and go to Deployment Center settings.</li>
+<li>Change the &quot;Registry source&quot; to &quot;Azure container Registry&quot;.</li>
+<li>Set &quot;Authentication&quot; to &quot;Managed Identity&quot;.</li>
+<li>Change &quot;Identity&quot; to &quot;System assigned&quot;.</li>
+<li>Set the registry to <code>appRegistry</code>.</li>
+<li>Set the image name to <code>simpleApp</code>.</li>
+<li>Set the version to <code>latest</code>.</li>
+<li>Save the settings of your WebApp.</li>
+</ul>
+<p>Wait few minutes and visit the URL of your WebApp, you may need to restrat the app.</p>
+<p><strong>Question:</strong> What did you understand from this assignement?</p>
+<h3 id="task-2-deploy-your-website-using-containers"><strong>Task 2: Deploy your Website using Containers</strong></h3>
+<p>Use the website you developed in previous assignements to create a Docker image and push it to ACR. Then, deploy the app to a WebApp (as in Task 1).</p>
+<p>Try to give a unique name for yoru WebAppp anddeactivate the <code>Unique default hostname (preview) on</code> option (e.g., you can try: &lt;name_oo_your_app&gt;_your_name).</p>
+<p>Once deployed, ask your classmate to visit your website!</p>
+<h3 id="troubleshooting">Troubleshooting:</h3>
+<ul>
+<li><strong>Image Pull Errors</strong>: Make sure the <code>az acr login</code> command was successful.</li>
+<li><strong>Access Denied</strong>: Ensure the credentials provided to the web app are correct, and you have assigned the <code>acrpull</code> role to the service principal.</li>
+<li><strong>Web App Not Starting</strong>: Use the Azure Portal to check the web app's logs for more information or run <code>az webapp log tail</code> to see real-time logs.</li>
+</ul>
+<!-- 
+### **Task 3: Deploy a simple WebApp with CLI**
+
+#### 1. **Login into Azure**
+Open a terminal and log in into your Azure account.
+
+#### 2. **Connect to your ACR**
+First, log in to your ACR to ensure you have the right access:
+```bash
+az acr login --name <ACR_NAME>
+```
+Replace `<ACR_NAME>` with the name of your Azure Container Registry.
+
+#### 3. **Create a Resource Group (if not created)**
+You need a resource group to hold the web app:
+```bash
+az group create --name <RESOURCE_GROUP_NAME> --location <LOCATION>
+```
+Replace `<RESOURCE_GROUP_NAME>` with your desired resource group name (e.g., `myResourceGroup`), and `<LOCATION>` with the Azure region (e.g., `eastus`).
+
+#### 4. **Create an Azure App Service Plan**
+An App Service Plan defines the region, scale, and pricing tier for the web app:
+```bash
+az appservice plan create --name <APP_SERVICE_PLAN_NAME> --resource-group <RESOURCE_GROUP_NAME> --sku B1 --is-linux
+```
+- `<APP_SERVICE_PLAN_NAME>`: Name for the App Service Plan.
+- `--sku B1`: The pricing tier. You can adjust this based on your needs (e.g., F1 for free tier).
+- `--is-linux`: Specifies that you are using a Linux-based environment.
+
+#### 5. **Create a Web App using the Docker Image**
+Now, create a web app that will use the Docker image stored in your ACR:
+```bash
+az webapp create --resource-group <RESOURCE_GROUP_NAME> --plan <APP_SERVICE_PLAN_NAME> --name <WEB_APP_NAME> --deployment-container-image-name <ACR_NAME>.azurecr.io/<IMAGE_NAME>:<TAG>
+```
+- `<WEB_APP_NAME>`: Unique name for your web app (e.g., `mywebapp123`).
+- `<IMAGE_NAME>`: Name of your Docker image.
+- `<TAG>`: Image tag (e.g., `latest`).
+
+#### 6. **Configure Web App to Authenticate with ACR**
+If your ACR is private (which is usually the case), you need to provide your web app with permission to pull the image from ACR:
+
+a) **Create a Service Principal** and grant it access to your ACR:
+```bash
+az ad sp create-for-rbac --name http://<WEB_APP_NAME> --scopes $(az acr show --name <ACR_NAME> --query id --output tsv) --role acrpull --sdk-auth
+```
+This command returns a JSON object. Save this JSON as you might need it for troubleshooting or later steps.
+
+b) **Configure the Web App** to use ACR credentials:
+```bash
+az webapp config container set --name <WEB_APP_NAME> --resource-group <RESOURCE_GROUP_NAME> --docker-custom-image-name <ACR_NAME>.azurecr.io/<IMAGE_NAME>:<TAG> --docker-registry-server-url https://<ACR_NAME>.azurecr.io --docker-registry-server-user <CLIENT_ID> --docker-registry-server-password <CLIENT_SECRET>
+```
+- `<CLIENT_ID>` and `<CLIENT_SECRET>` are from the JSON response you got from the previous step.
+
+#### 7. **Set Environment Variables (Optional)**
+If your web app requires any environment variables, set them using:
+```bash
+az webapp config appsettings set --resource-group <RESOURCE_GROUP_NAME> --name <WEB_APP_NAME> --settings ENV_VAR1=value1 ENV_VAR2=value2
+```
+
+#### 8. **Verify Deployment**
+To verify that your app is running, you can browse to:
+```
+https://<WEB_APP_NAME>.azurewebsites.net
+```
+
+#### 9. **Monitor Logs (Optional)**
+To view the logs from your running web app:
+```bash
+az webapp log tail --name <WEB_APP_NAME> --resource-group <RESOURCE_GROUP_NAME>
+```
+
+### Additional Tips:
+- If you need Continuous Deployment from ACR to your web app, you can set it up using the Azure Portal or Azure CLI.
+- You can scale the web app by modifying the App Service Plan settings.
+
+### Troubleshooting:
+- **Image Pull Errors**: Make sure the `az acr login` command was successful and the service principal has the correct permissions.
+- **Access Denied**: Ensure the credentials provided to the web app are correct, and you have assigned the `acrpull` role to the service principal.
+- **Web App Not Starting**: Use the Azure Portal to check the web app's logs for more information or run `az webapp log tail` to see real-time logs.
+
+Let me know if you need help with any specific part! -->
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
