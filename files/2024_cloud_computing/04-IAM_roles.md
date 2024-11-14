@@ -114,7 +114,10 @@ You need to allow your WebApp to pull images from ACR in order to deploy it.
 * Enable "System Identity", then click on Save. 
 
 **Questions:** 
-* What's the difference between ``System Identity`` and ``User Identity``?
+* What's a "Service Principal"? How does it work?
+* What's a "Managed Identity"?
+* What's the difference between ``System Identity`` and ``User Identity`` in "Managed Identity"?
+* What's the difference between "Managed Identity" and "Service Principal"?
 * When clicking on "Azure role assignments", what so you see? What does this section list?
 
 #### 8. **Assign roles to your WebApp**
