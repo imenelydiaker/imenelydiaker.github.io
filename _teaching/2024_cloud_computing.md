@@ -23,14 +23,14 @@ Assignements
 [Assignement 5: Azure WebApp 2]()   
 [Assignement 6: Azure VM](../files/2024_cloud_computing/03-Azure_vm.html)  
 [Assignement 7: Identity Management](../files/2024_cloud_computing/04-IAM_roles.html)  
-[Assignement 8: Connecting the dots]()  
-[Assignement 9: Serverless Computing]()  
+[Assignement 8: Serverless Computing]()  
 
 Documentation
 ======
 [Azure documentation](https://learn.microsoft.com/fr-fr/azure/?product=popular)
 
-Projects
+Project
 ======
+[Project](../files/2024_cloud_computing/project.pdf)  
 [Projects ideas]()  
 <!-- [Discord bot project](../files/2024_cloud_computing/discord_bot_project.html) -->
