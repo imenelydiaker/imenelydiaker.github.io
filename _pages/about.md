@@ -6,7 +6,7 @@ redirect_from:
   - /about.html
 ---
 
-I’m Imene (pronounced _/iman/_), I’m currently a first year PhD Student at INSA Lyon and Esker. My work focuses on NLP and Agents for Web navigation.
+I’m Imene (pronounced _/iman/_), I’m currently a second year PhD Student at INSA Lyon and Esker. My work focuses on NLP and Agents for Web navigation.
 
 I worked as a Data Scientist for almost 2 years before starting my PhD, it was a great experience in industry, although I prefer research as it is more interesting and challenging.
 
