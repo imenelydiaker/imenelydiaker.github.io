@@ -17,6 +17,7 @@ Introduction to AI Agents, specificaly to LLM agents. In this course, students l
 - Build MCP Agents with `smolagents`.
 - Build an MCP GitHub Agent.
 
+
 Slides
 ======
 Slides [here]().
