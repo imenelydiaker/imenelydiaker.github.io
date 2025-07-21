@@ -8,7 +8,12 @@ date: 2025-07-22
 location: "Paris, France"
 ---
 
-Introduction to AI Agents, specificaly to LLM agents. In this course, students learned:
+Introduction to AI Agents, specificaly to LLM agents.
+
+Summary
+======
+
+In this course, students learned:
 - Definition and use cases of an agent.
 - How to build LLM Agents from scratch.
 - Fine-tune an LLM to do function calling.
@@ -16,7 +21,6 @@ Introduction to AI Agents, specificaly to LLM agents. In this course, students l
 - Build an Agentic RAG with `smolagents`.
 - Build MCP Agents with `smolagents`.
 - Build an MCP GitHub Agent.
-
 
 Slides
 ======
