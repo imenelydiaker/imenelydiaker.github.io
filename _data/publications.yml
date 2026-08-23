@@ -1,0 +1,63 @@
+# Publications, newest first. Sources: Google Scholar, cross-checked against
+# arXiv and DBLP for full author lists and venues.
+# The author name matching site.author.name is rendered in bold.
+# For papers with very long author lists, the list is shortened but always
+# keeps the first authors and Imene Kerboua.
+
+- title: "Does The Way You Plan Matter? An Empirical Study of Planning Representations for LLM Web Agents"
+  authors: "Alejandra Zambrano, Sara Vera Marjanovic, Imene Kerboua, Xing Han Lù, Leila Kosseim"
+  venue: "arXiv preprint"
+  year: 2026
+  url: "https://arxiv.org/abs/2605.29927"
+
+- title: "CUBE: A Standard for Unifying Agent Benchmarks"
+  authors: "Alexandre Lacoste, Nicolas Gontier, Oleh Shliazhko, …, Imene Kerboua, …, Siva Reddy, Dawn Song"
+  venue: "arXiv preprint"
+  year: 2026
+  url: "https://arxiv.org/abs/2603.15798"
+
+- title: "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents"
+  authors: "Imene Kerboua, Fatemeh Pesaran Zadeh, Xing Han Lù, et al."
+  venue: "Workshop on Agents in the Wild: Safety, Security, and Beyond"
+  year: 2026
+
+- title: "FocusAgent: Simple Yet Effective Ways of Trimming the Large Context of Web Agents"
+  authors: "Imene Kerboua, Sahar Omidi Shayegan, Megh Thakkar, Xing Han Lù, Léo Boisvert, Massimo Caccia, Jérémy Espinas, Alexandre Aussem, Véronique Eglin, Alexandre Lacoste"
+  venue: "arXiv preprint"
+  year: 2025
+  url: "https://arxiv.org/abs/2510.03204"
+
+- title: "LineRetriever: Planning-Aware Observation Reduction for Web Agents"
+  authors: "Imene Kerboua, Sahar Omidi Shayegan, Megh Thakkar, Xing Han Lù, Massimo Caccia, Véronique Eglin, Alexandre Aussem, Jérémy Espinas, Alexandre Lacoste"
+  venue: "arXiv preprint"
+  year: 2025
+  url: "https://arxiv.org/abs/2507.00210"
+
+- title: "Maintaining MTEB: Towards Long Term Usability and Reproducibility of Embedding Benchmarks"
+  authors: "Isaac Chung, Imene Kerboua, Márton Kardos, Roman Solomatin, Kenneth Enevoldsen"
+  venue: "arXiv preprint"
+  year: 2025
+  url: "https://arxiv.org/abs/2506.21182"
+
+- title: "MIEB: Massive Image Embedding Benchmark"
+  authors: "Chenghao Xiao, Isaac Chung, Imene Kerboua, Jamie Stirling, Xin Zhang, Márton Kardos, Roman Solomatin, Noura Al Moubayed, Kenneth Enevoldsen, Niklas Muennighoff"
+  venue: "ICCV 2025"
+  year: 2025
+  url: "https://arxiv.org/abs/2504.10471"
+
+- title: "MMTEB: Massive Multilingual Text Embedding Benchmark"
+  authors: "Kenneth Enevoldsen, Isaac Chung, Imene Kerboua, Márton Kardos, Ashwin Mathur, David Stap, …, Niklas Muennighoff"
+  venue: "ICLR 2025"
+  year: 2025
+  url: "https://arxiv.org/abs/2502.13595"
+
+- title: "MTEB-FR : une expérience à large échelle pour l'apprentissage de représentation en français"
+  authors: "Wissam Siblini, Mathieu Ciancone, Imene Kerboua, Marion Schaeffer"
+  venue: "EGC 2025"
+  year: 2025
+
+- title: "MTEB-French: Resources for French Sentence Embedding Evaluation and Analysis"
+  authors: "Mathieu Ciancone, Imene Kerboua, Marion Schaeffer, Wissam Siblini"
+  venue: "arXiv preprint"
+  year: 2024
+  url: "https://arxiv.org/abs/2405.20468"

@@ -95,7 +95,7 @@ layout: compress
       </section>
 
       <section class="section" id="projects">
-        <h2 class="section__title">{% include icons.html name="briefcase" %} Projects</h2>
+        <h2 class="section__title">{% include icons.html name="folder-open" %} Projects</h2>
         <div class="cards">
           {% for project in site.data.projects %}
             <article class="card">
@@ -119,8 +119,13 @@ layout: compress
         </div>
       </section>
 
+      <section class="section" id="publications">
+        <h2 class="section__title">{% include icons.html name="file-lines" %} Publications</h2>
+        {% include publications.html %}
+      </section>
+
       <section class="section" id="resume">
-        <h2 class="section__title">{% include icons.html name="file-lines" %} Resume</h2>
+        <h2 class="section__title">{% include icons.html name="briefcase" %} Resume</h2>
         {% include resume.html %}
       </section>
     </main>
