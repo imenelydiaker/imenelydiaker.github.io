@@ -1,0 +1,18 @@
+{% capture me %}{{ site.author.name }}{% endcapture %}
+{% capture me_bold %}<strong>{{ site.author.name }}</strong>{% endcapture %}
+
+<ol class="pubs">
+  {% for pub in site.data.publications %}
+    <li class="pub">
+      <p class="pub__title">
+        {% if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+      </p>
+      <p class="pub__authors">{{ pub.authors | replace: me, me_bold }}</p>
+      <p class="pub__meta">
+        {% if pub.venue %}{{ pub.venue }}{% endif %}
+        {% if pub.venue and pub.year %}<span class="card__sep">·</span>{% endif %}
+        {% if pub.year %}{{ pub.year }}{% endif %}
+      </p>
+    </li>
+  {% endfor %}
+</ol>

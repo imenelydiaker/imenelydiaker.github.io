@@ -349,6 +349,70 @@ body {
   border-radius: 999px;
 }
 
+/* Publications */
+
+.pubs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub {
+  position: relative;
+  padding: 0 0 0 1.6em;
+  margin-bottom: 1.3em;
+}
+
+.pub:last-child {
+  margin-bottom: 0;
+}
+
+.pub::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0.15em;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--primary);
+}
+
+.pub__title {
+  margin: 0 0 0.3em;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.pub__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.pub__title a:hover,
+.pub__title a:focus {
+  text-decoration: underline;
+}
+
+.pub__authors {
+  margin: 0 0 0.25em;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.pub__authors strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pub__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 /* Resume blocks */
 
 .resume {
