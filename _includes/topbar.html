@@ -1,0 +1,10 @@
+{% include base_path %}
+
+<header class="topbar">
+  <nav class="topbar__nav" aria-label="Main">
+    {% for link in site.data.navigation.main %}
+      {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
+      <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </nav>
+</header>

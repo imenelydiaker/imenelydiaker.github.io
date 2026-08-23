@@ -1,0 +1,627 @@
+/* ==========================================================================
+   Site theme — single-colour Material-style surface.
+   Loaded on every page (see _includes/head/custom.html) so the landing page
+   and the inner pages (course pages, /cv/, 404, ...) share one style.
+   ========================================================================== */
+
+:root {
+  --bg: #f4f4f5;              /* single background colour */
+  --surface: #ffffff;
+  --primary: #111113;         /* accent: buttons, links, active nav */
+  --primary-dark: #000000;
+  --primary-soft: #ececee;
+  --text: #111113;
+  --muted: #5f5f66;
+  --divider: rgba(17, 17, 19, 0.10);
+  --chip: #f1f1f2;
+
+  /* soft, layered shadows */
+  --e1: 0 1px 2px rgba(17, 17, 19, 0.05), 0 2px 8px rgba(17, 17, 19, 0.06);
+  --e2: 0 2px 6px rgba(17, 17, 19, 0.07), 0 8px 20px rgba(17, 17, 19, 0.08);
+  --e4: 0 6px 14px rgba(17, 17, 19, 0.10), 0 18px 40px rgba(17, 17, 19, 0.14);
+  --e-primary: 0 8px 20px rgba(17, 17, 19, 0.28);
+
+  --radius: 18px;
+  --radius-sm: 14px;
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* the theme's own body rules assume the old masthead; reset them */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+/* ==========================================================================
+   Top app bar
+   ========================================================================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
+  padding: 0 1.75em;
+  height: 4rem;
+  background: rgba(244, 244, 245, 0.82);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--divider);
+}
+
+.topbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+}
+
+.topbar__nav a {
+  padding: 0.5em 1em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a:focus,
+.topbar__nav a.is-active {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  max-width: 58em;
+  margin: 0 auto;
+  padding: 3em 1.5em 3.5em;
+  text-align: center;
+}
+
+.hero__avatar {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--surface);
+  box-shadow: var(--e2);
+}
+
+.hero__name {
+  margin: 0.7em 0 0.3em;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hero__social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4em;
+  margin: 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__social li {
+  margin: 0;
+}
+
+.hero__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.2rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 50%;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.hero__social a:hover,
+.hero__social a:focus {
+  color: var(--primary);
+  background: var(--primary-soft);
+  transform: translateY(-2px);
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75em;
+  margin-bottom: 2.2em;
+}
+
+.btn-pill {
+  display: inline-block;
+  padding: 0.6em 1.5em;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--primary);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: var(--e1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.btn-pill:hover,
+.btn-pill:focus {
+  color: #fff;
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--e-primary);
+}
+
+.btn-pill:active {
+  transform: translateY(0);
+  box-shadow: var(--e1);
+}
+
+.hero__bio {
+  max-width: 54em;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero__bio p {
+  margin: 0 0 1em;
+}
+
+.hero__bio a,
+.card__body a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Sections (Teaching / Projects / Resume)
+   ========================================================================== */
+
+.section {
+  max-width: 56em;
+  margin: 0 auto;
+  padding: 2.5em 1.5em;
+  /* keep anchored headings clear of the sticky app bar */
+  scroll-margin-top: 4rem;
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0 0 1.2em;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.section__title .icon {
+  font-size: 0.8em;
+  color: var(--primary);
+}
+
+.section__empty {
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+  gap: 1em;
+}
+
+.card {
+  padding: 1.5em 1.6em;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  box-shadow: var(--e1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--e4);
+}
+
+.card__title {
+  margin: 0 0 0.3em;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.card__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card__title a:hover,
+.card__title a:focus {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.card__meta {
+  margin: 0 0 0.3em;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.card__meta--muted {
+  opacity: 0.85;
+}
+
+.card__sep {
+  padding: 0 0.4em;
+}
+
+.card__body {
+  margin: 0.6em 0 0.9em;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.card__link:hover,
+.card__link:focus {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.card__link .icon {
+  font-size: 0.85em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0.6em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  margin: 0;
+  padding: 0.3em 0.85em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  border-radius: 999px;
+}
+
+/* Resume blocks */
+
+.resume {
+  display: grid;
+  gap: 1em;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0 0 0 1.1em;
+  list-style: none;
+  border-left: 2px solid var(--divider);
+}
+
+.timeline > li {
+  position: relative;
+  margin: 0 0 1.2em;
+}
+
+.timeline > li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  top: 0.45em;
+  left: -1.45em;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.timeline__head {
+  margin: 0;
+  font-weight: 500;
+}
+
+.timeline__dates {
+  margin: 0.1em 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.timeline__details {
+  margin: 0.4em 0 0;
+  padding-left: 1.1em;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Back-to-top button (Material FAB — round by convention)
+   ========================================================================== */
+
+.to-top {
+  position: fixed;
+  right: 1.5em;
+  bottom: 1.5em;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  background: var(--primary);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: var(--e-primary);
+  opacity: 0;
+  transform: translateY(0.5em);
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.to-top[hidden] {
+  display: none;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.to-top:hover,
+.to-top:focus {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--e4), var(--e-primary);
+}
+
+/* ==========================================================================
+   Inner pages — bring the old theme layouts in line with the new look
+   ========================================================================== */
+
+#main {
+  max-width: 56em;
+  margin: 0 auto;
+  padding: 2.5em 1.5em 4em;
+  float: none;
+  clear: both;
+}
+
+.page,
+.archive {
+  width: 100%;
+  float: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page__inner-wrap {
+  padding: 2em 2.2em;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  box-shadow: var(--e1);
+}
+
+.page__title,
+.archive__subtitle {
+  margin-top: 0;
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  border-bottom: 1px solid var(--divider);
+}
+
+.page__content,
+.archive {
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.7;
+}
+
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4 {
+  font-family: var(--font);
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 0;
+}
+
+.page__content h1 {
+  font-size: 1.3rem;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid var(--divider);
+}
+
+.page__content a,
+.archive a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.page__content code,
+.page__content pre {
+  background: var(--chip);
+}
+
+.page__meta,
+.page__date {
+  color: var(--muted);
+}
+
+/* the sidebar, share buttons and dark footer belong to the old look */
+.sidebar,
+.author__avatar,
+.page__share,
+.page__footer,
+.page__meta-title,
+.masthead {
+  display: none;
+}
+
+.archive__item {
+  padding: 1.4em 1.6em;
+  margin-bottom: 1em;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  box-shadow: var(--e1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--e4);
+}
+
+.archive__item-title {
+  margin-top: 0;
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+.archive__item-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.archive__item-title a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Small screens
+   ========================================================================== */
+
+@media (max-width: 37.5em) {
+  .topbar {
+    padding: 0 0.6em;
+    height: 3.5rem;
+  }
+
+  .topbar__nav {
+    gap: 0.15em;
+  }
+
+  .topbar__nav a {
+    padding: 0.45em 0.7em;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 2em 1.25em 2.5em;
+  }
+
+  .hero__avatar {
+    width: 128px;
+    height: 128px;
+  }
+
+  .hero__name {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 2em 1.25em;
+  }
+
+  .section__title {
+    font-size: 1.35rem;
+  }
+
+  .page__inner-wrap {
+    padding: 1.4em 1.2em;
+  }
+
+  .to-top {
+    right: 1em;
+    bottom: 1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card,
+  .to-top,
+  .hero__social a,
+  .btn-pill {
+    transition: none;
+  }
+}
