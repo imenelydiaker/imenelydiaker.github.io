@@ -1,0 +1,79 @@
+# Source of truth for the Resume section on the home page and for /cv/.
+# Dates and titles follow the LinkedIn profile export.
+experience:
+  - role: "AI PhD Student"
+    place: "Esker"
+    dates: "May 2023 – present"
+    details:
+      - "CIFRE partnership with LIRIS and INSA Lyon."
+      - "Working on autonomous web agents and embeddings evaluation."
+
+  - role: "Teacher Assistant"
+    place: "Université Lumière Lyon 2"
+    dates: "September 2024 – February 2026"
+    details:
+      - "Cloud Computing with Azure (Master's)."
+      - "MLOps with Azure (Master's)."
+
+  - role: "Visiting Researcher"
+    place: "Mila – Quebec AI Institute"
+    dates: "August 2025 – November 2025"
+    details:
+      - "Research visit in Montréal, Canada."
+
+  - role: "Lecturer"
+    place: "Groupe GEMA"
+    dates: "October 2022 – January 2023"
+    details:
+      - "Part-time Master's classes, alongside the Data Scientist role at Cygogn."
+      - "Object Oriented Programming with Python, advanced SQL and NLP."
+
+  - role: "Data Scientist"
+    place: "Cygogn"
+    dates: "September 2021 – April 2023"
+    details:
+      - "Model development and deployment on AWS."
+      - "BI and data engineering."
+
+  - role: "Data Scientist NLP"
+    place: "Once For All France"
+    dates: "March 2021 – September 2021"
+    details:
+      - "Developed models for email classification."
+
+  - role: "Frontend Web Developer"
+    place: "SFR Business"
+    dates: "June 2020 – September 2020"
+    details:
+      - "Developed an app for data visualization using Symfony and ReactJS."
+
+  - role: "Machine Learning Researcher"
+    place: "LRIA Lab, USTHB"
+    dates: "February 2019 – June 2019"
+    details:
+      - "Conception and implementation of a hybrid recommender system based on deep learning."
+
+education:
+  - degree: "Ph.D in Machine Learning"
+    place: "INSA Lyon"
+    dates: "December 2023 – December 2026"
+  - degree: "M.S. in Computer Science, Data Mining"
+    place: "Université Lumière Lyon 2"
+    dates: "September 2019 – September 2021"
+  - degree: "B.S. in Information Systems and Software Engineering"
+    place: "USTHB"
+    dates: "September 2016 – July 2019"
+
+skills:
+  - "LLMs"
+  - "Agents"
+  - "RAG"
+  - "Azure"
+  - "Python"
+  - "Git"
+  - "Docker"
+  - "SQL"
+  - "AWS"
+  - "Machine Learning"
+  - "Deep Learning"
+  - "NLP"

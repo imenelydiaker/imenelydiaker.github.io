@@ -14,17 +14,11 @@ layout: compress
   <body>
 
     {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    {% include topbar.html %}
 
     {{ content }}
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
+    {% include back-to-top.html %}
     {% include scripts.html %}
 
   </body>

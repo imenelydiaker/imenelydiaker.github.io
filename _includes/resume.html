@@ -1,0 +1,39 @@
+{% assign resume = site.data.resume %}
+
+<div class="resume">
+  <div class="card">
+    <h3 class="card__title">Work experience</h3>
+    <ul class="timeline">
+      {% for item in resume.experience %}
+        <li>
+          <p class="timeline__head">{{ item.role }}{% if item.place %}<span class="card__sep">·</span>{{ item.place }}{% endif %}</p>
+          {% if item.dates and item.dates != "" %}<p class="timeline__dates">{{ item.dates }}</p>{% endif %}
+          {% if item.details %}
+            <ul class="timeline__details">
+              {% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="card__title">Education</h3>
+    <ul class="timeline">
+      {% for item in resume.education %}
+        <li>
+          <p class="timeline__head">{{ item.degree }}{% if item.place %}<span class="card__sep">·</span>{{ item.place }}{% endif %}</p>
+          {% if item.dates and item.dates != "" %}<p class="timeline__dates">{{ item.dates }}</p>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="card__title">Skills</h3>
+    <ul class="tags">
+      {% for skill in resume.skills %}<li>{{ skill }}</li>{% endfor %}
+    </ul>
+  </div>
+</div>

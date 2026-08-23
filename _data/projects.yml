@@ -1,0 +1,32 @@
+# Cards shown in the Projects section of the home page.
+# Add `url:` to make a card clickable.
+- title: "FocusAgent"
+  role: "Research project"
+  description: >
+    Simple yet effective ways of trimming the large context of web agents: a small
+    retriever model reads the page and keeps only the lines that matter, so the
+    acting model sees a much smaller observation — and never reads pruned
+    prompt-injection content.
+  url: "https://imenelydiaker.github.io/focus_agent/"
+  tags:
+    - "Web agents"
+    - "LLM"
+    - "Prompt injection"
+
+- title: "MMTEB"
+  role: "Contributor"
+  description: "Scaling MTEB to many languages, with a focus on low-resource ones."
+  url: "https://github.com/embeddings-benchmark/mteb"
+  tags:
+    - "Benchmarking"
+    - "Embeddings"
+    - "Open source"
+
+- title: "MTEB French"
+  role: "Contributor"
+  description: "Extension of the Massive Text Embedding Benchmark to French."
+  url: "https://github.com/embeddings-benchmark/mteb"
+  tags:
+    - "NLP"
+    - "French"
+    - "Open source"

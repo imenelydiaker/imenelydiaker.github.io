@@ -1,0 +1,132 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="landing">
+
+    {% include browser-upgrade.html %}
+    {% include topbar.html %}
+
+    <main>
+      <section class="hero" id="top">
+        {% if site.author.avatar %}
+          <img class="hero__avatar"
+               src="{% if site.author.avatar contains '://' %}{{ site.author.avatar }}{% else %}{{ base_path }}/images/{{ site.author.avatar }}{% endif %}"
+               alt="{{ site.author.name }}">
+        {% endif %}
+
+        <h1 class="hero__name">{{ site.author.name | default: site.title }}</h1>
+
+        <ul class="hero__social">
+          {% if site.author.linkedin %}
+            <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn">{% include icons.html name="linkedin" %}<span class="sr-only">LinkedIn</span></a></li>
+          {% endif %}
+          {% if site.author.github %}
+            <li><a href="https://github.com/{{ site.author.github }}" title="GitHub">{% include icons.html name="github" %}<span class="sr-only">GitHub</span></a></li>
+          {% endif %}
+          {% if site.author.email %}
+            <li><a href="mailto:{{ site.author.email }}" title="Email">{% include icons.html name="envelope" %}<span class="sr-only">Email</span></a></li>
+          {% endif %}
+          {% if site.author.twitter %}
+            <li><a href="https://twitter.com/{{ site.author.twitter }}" title="X">{% include icons.html name="x-twitter" %}<span class="sr-only">X</span></a></li>
+          {% endif %}
+          {% if site.author.bluesky %}
+            <li><a href="https://bsky.app/profile/{{ site.author.bluesky }}" title="Bluesky">{% include icons.html name="bluesky" %}<span class="sr-only">Bluesky</span></a></li>
+          {% endif %}
+          {% if site.author.googlescholar %}
+            <li><a href="{{ site.author.googlescholar }}" title="Google Scholar">{% include icons.html name="graduation-cap" %}<span class="sr-only">Google Scholar</span></a></li>
+          {% endif %}
+        </ul>
+
+        <div class="hero__buttons">
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
+            <a class="btn-pill" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+
+        <div class="hero__bio">
+          {{ content }}
+        </div>
+      </section>
+
+      <section class="section" id="teaching">
+        <h2 class="section__title">{% include icons.html name="chalkboard-user" %} Teaching</h2>
+        <div class="cards">
+          {% assign courses = site.teaching | sort: "date" | reverse %}
+          {% for course in courses %}
+            <article class="card">
+              <h3 class="card__title">
+                {% if course.details == false %}
+                  {{ course.title }}
+                {% else %}
+                  <a href="{{ base_path }}{{ course.url }}">{{ course.title }}</a>
+                {% endif %}
+              </h3>
+              <p class="card__meta">
+                {% if course.type %}{{ course.type }}{% endif %}
+                {% if course.venue %}<span class="card__sep">·</span>{{ course.venue }}{% endif %}
+                {% unless course.show_date == false %}
+                  {% if course.years %}<span class="card__sep">·</span>{{ course.years }}
+                  {% elsif course.date %}<span class="card__sep">·</span>{{ course.date | date: "%Y" }}{% endif %}
+                {% endunless %}
+              </p>
+              {% if course.location %}
+                <p class="card__meta card__meta--muted">{% include icons.html name="location-dot" %} {{ course.location }}</p>
+              {% endif %}
+              <p class="card__body">{{ course.excerpt | default: course.content | strip_html | truncatewords: 35 }}</p>
+              {% unless course.details == false %}
+                <a class="card__link" href="{{ base_path }}{{ course.url }}">Course details {% include icons.html name="arrow-up-right-from-square" %}</a>
+              {% endunless %}
+            </article>
+          {% else %}
+            <p class="section__empty">No courses listed yet.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section__title">{% include icons.html name="briefcase" %} Projects</h2>
+        <div class="cards">
+          {% for project in site.data.projects %}
+            <article class="card">
+              <h3 class="card__title">
+                {% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
+              </h3>
+              {% if project.role %}<p class="card__meta">{{ project.role }}</p>{% endif %}
+              <p class="card__body">{{ project.description }}</p>
+              {% if project.tags %}
+                <ul class="tags">
+                  {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+                </ul>
+              {% endif %}
+              {% if project.url %}
+                <a class="card__link" href="{{ project.url }}">Visit {% include icons.html name="arrow-up-right-from-square" %}</a>
+              {% endif %}
+            </article>
+          {% else %}
+            <p class="section__empty">No projects listed yet.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="section" id="resume">
+        <h2 class="section__title">{% include icons.html name="file-lines" %} Resume</h2>
+        {% include resume.html %}
+      </section>
+    </main>
+
+    {% include back-to-top.html %}
+    {% include scripts.html %}
+
+  </body>
+</html>

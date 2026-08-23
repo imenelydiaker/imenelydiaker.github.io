@@ -1,22 +1,12 @@
-# main links links
+# Main navigation.
+# Anchors (#teaching, #projects, #resume) scroll to the sections of the
+# single-page home; from any other page they land back on the home page.
 main:
-  # - title: "Publications"
-  #   url: /publications/
-
-  # - title: "Talks"
-  #   url: /talks/    
-
   - title: "Teaching"
-    url: /teaching/    
-    
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
-  # - title: "Blog Posts"
-  #   url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
-  # - title: "Guide"
-  #   url: /markdown/
+    url: /#teaching
+
+  - title: "Projects"
+    url: /#projects
+
+  - title: "Resume"
+    url: /#resume
