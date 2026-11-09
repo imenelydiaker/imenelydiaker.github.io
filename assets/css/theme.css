@@ -241,12 +241,6 @@ body {
   border: 1px solid var(--divider);
   border-radius: var(--radius);
   box-shadow: var(--e1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--e4);
 }
 
 .card__title {
@@ -663,7 +657,6 @@ body {
     scroll-behavior: auto;
   }
 
-  .card,
   .to-top,
   .hero__social a {
     transition: none;
