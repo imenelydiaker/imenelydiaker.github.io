@@ -18,44 +18,41 @@ layout: compress
 
     <main>
       <section class="hero" id="top">
-        {% if site.author.avatar %}
-          <img class="hero__avatar"
-               src="{% if site.author.avatar contains '://' %}{{ site.author.avatar }}{% else %}{{ base_path }}/images/{{ site.author.avatar }}{% endif %}"
-               alt="{{ site.author.name }}">
-        {% endif %}
+        <div class="hero__profile">
+          {% if site.author.avatar %}
+            <img class="hero__avatar"
+                 src="{% if site.author.avatar contains '://' %}{{ site.author.avatar }}{% else %}{{ base_path }}/images/{{ site.author.avatar }}{% endif %}"
+                 alt="{{ site.author.name }}">
+          {% endif %}
 
-        <h1 class="hero__name">{{ site.author.name | default: site.title }}</h1>
-
-        <ul class="hero__social">
-          {% if site.author.linkedin %}
-            <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn">{% include icons.html name="linkedin" %}<span class="sr-only">LinkedIn</span></a></li>
-          {% endif %}
-          {% if site.author.github %}
-            <li><a href="https://github.com/{{ site.author.github }}" title="GitHub">{% include icons.html name="github" %}<span class="sr-only">GitHub</span></a></li>
-          {% endif %}
-          {% if site.author.email %}
-            <li><a href="mailto:{{ site.author.email }}" title="Email">{% include icons.html name="envelope" %}<span class="sr-only">Email</span></a></li>
-          {% endif %}
-          {% if site.author.twitter %}
-            <li><a href="https://twitter.com/{{ site.author.twitter }}" title="X">{% include icons.html name="x-twitter" %}<span class="sr-only">X</span></a></li>
-          {% endif %}
-          {% if site.author.bluesky %}
-            <li><a href="https://bsky.app/profile/{{ site.author.bluesky }}" title="Bluesky">{% include icons.html name="bluesky" %}<span class="sr-only">Bluesky</span></a></li>
-          {% endif %}
-          {% if site.author.googlescholar %}
-            <li><a href="{{ site.author.googlescholar }}" title="Google Scholar">{% include icons.html name="graduation-cap" %}<span class="sr-only">Google Scholar</span></a></li>
-          {% endif %}
-        </ul>
-
-        <div class="hero__buttons">
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
-            <a class="btn-pill" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
-          {% endfor %}
+          <ul class="hero__social">
+            {% if site.author.linkedin %}
+              <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn">{% include icons.html name="linkedin" %}<span class="sr-only">LinkedIn</span></a></li>
+            {% endif %}
+            {% if site.author.github %}
+              <li><a href="https://github.com/{{ site.author.github }}" title="GitHub">{% include icons.html name="github" %}<span class="sr-only">GitHub</span></a></li>
+            {% endif %}
+            {% if site.author.email %}
+              <li><a href="mailto:{{ site.author.email }}" title="Email">{% include icons.html name="envelope" %}<span class="sr-only">Email</span></a></li>
+            {% endif %}
+            {% if site.author.twitter %}
+              <li><a href="https://twitter.com/{{ site.author.twitter }}" title="X">{% include icons.html name="x-twitter" %}<span class="sr-only">X</span></a></li>
+            {% endif %}
+            {% if site.author.bluesky %}
+              <li><a href="https://bsky.app/profile/{{ site.author.bluesky }}" title="Bluesky">{% include icons.html name="bluesky" %}<span class="sr-only">Bluesky</span></a></li>
+            {% endif %}
+            {% if site.author.googlescholar %}
+              <li><a href="{{ site.author.googlescholar }}" title="Google Scholar">{% include icons.html name="graduation-cap" %}<span class="sr-only">Google Scholar</span></a></li>
+            {% endif %}
+          </ul>
         </div>
 
-        <div class="hero__bio">
-          {{ content }}
+        <div class="hero__intro">
+          <h1 class="hero__name">{{ site.author.name | default: site.title }}</h1>
+
+          <div class="hero__bio">
+            {{ content }}
+          </div>
         </div>
       </section>
 
