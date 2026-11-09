@@ -56,6 +56,36 @@ layout: compress
         </div>
       </section>
 
+      <section class="section" id="projects">
+        <h2 class="section__title">{% include icons.html name="folder-open" %} Projects</h2>
+        <div class="cards">
+          {% for project in site.data.projects %}
+            <article class="card">
+              <h3 class="card__title">
+                {% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
+              </h3>
+              {% if project.role %}<p class="card__meta">{{ project.role }}</p>{% endif %}
+              <p class="card__body">{{ project.description }}</p>
+              {% if project.tags %}
+                <ul class="tags">
+                  {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+                </ul>
+              {% endif %}
+              {% if project.url %}
+                <a class="card__link" href="{{ project.url }}">Visit {% include icons.html name="arrow-up-right-from-square" %}</a>
+              {% endif %}
+            </article>
+          {% else %}
+            <p class="section__empty">No projects listed yet.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <h2 class="section__title">{% include icons.html name="file-lines" %} Publications</h2>
+        {% include publications.html %}
+      </section>
+
       <section class="section" id="teaching">
         <h2 class="section__title">{% include icons.html name="chalkboard-user" %} Teaching</h2>
         <div class="cards">
@@ -89,36 +119,6 @@ layout: compress
             <p class="section__empty">No courses listed yet.</p>
           {% endfor %}
         </div>
-      </section>
-
-      <section class="section" id="projects">
-        <h2 class="section__title">{% include icons.html name="folder-open" %} Projects</h2>
-        <div class="cards">
-          {% for project in site.data.projects %}
-            <article class="card">
-              <h3 class="card__title">
-                {% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
-              </h3>
-              {% if project.role %}<p class="card__meta">{{ project.role }}</p>{% endif %}
-              <p class="card__body">{{ project.description }}</p>
-              {% if project.tags %}
-                <ul class="tags">
-                  {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
-                </ul>
-              {% endif %}
-              {% if project.url %}
-                <a class="card__link" href="{{ project.url }}">Visit {% include icons.html name="arrow-up-right-from-square" %}</a>
-              {% endif %}
-            </article>
-          {% else %}
-            <p class="section__empty">No projects listed yet.</p>
-          {% endfor %}
-        </div>
-      </section>
-
-      <section class="section" id="publications">
-        <h2 class="section__title">{% include icons.html name="file-lines" %} Publications</h2>
-        {% include publications.html %}
       </section>
 
       <section class="section" id="resume">
