@@ -148,6 +148,8 @@ include:
   - _pages
   - files
 exclude:
+  # Cloud Computing 2024 course material, archived in Drive and no longer published
+  - files/2024_cloud_computing
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -201,7 +203,9 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    # Course entries only feed the Teaching cards on the home page; the
+    # course pages themselves are no longer published (archived in Drive).
+    output: false
     permalink: /:collection/:path/
   # publications:
   #   output: true
