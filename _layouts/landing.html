@@ -65,13 +65,7 @@ layout: compress
           {% assign courses = site.teaching | sort: "date" | reverse %}
           {% for course in courses %}
             <article class="card">
-              <h3 class="card__title">
-                {% if course.details == false %}
-                  {{ course.title }}
-                {% else %}
-                  <a href="{{ base_path }}{{ course.url }}">{{ course.title }}</a>
-                {% endif %}
-              </h3>
+              <h3 class="card__title">{{ course.title }}</h3>
               <p class="card__meta">
                 {% if course.type %}{{ course.type }}{% endif %}
                 {% if course.venue %}<span class="card__sep">·</span>{{ course.venue }}{% endif %}
@@ -84,9 +78,6 @@ layout: compress
                 <p class="card__meta card__meta--muted">{% include icons.html name="location-dot" %} {{ course.location }}</p>
               {% endif %}
               <p class="card__body">{{ course.excerpt | default: course.content | strip_html | truncatewords: 35 }}</p>
-              {% unless course.details == false %}
-                <a class="card__link" href="{{ base_path }}{{ course.url }}">Course details {% include icons.html name="arrow-up-right-from-square" %}</a>
-              {% endunless %}
             </article>
           {% else %}
             <p class="section__empty">No courses listed yet.</p>
