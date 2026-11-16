@@ -1,5 +1,5 @@
 # Main navigation.
-# Anchors (#projects, #publications, #teaching, #resume) scroll to the sections
+# Anchors (#projects, #publications, #teaching, #blog, #resume) scroll to the sections
 # of the single-page home; from any other page they land back on the home page.
 main:
   - title: "Projects"
@@ -10,6 +10,9 @@ main:
 
   - title: "Teaching"
     url: /#teaching
+
+  - title: "Blog"
+    url: /#blog
 
   - title: "Resume"
     url: /#resume

@@ -112,6 +112,26 @@ layout: compress
         </div>
       </section>
 
+      <section class="section" id="blog">
+        <h2 class="section__title">{% include icons.html name="pen-nib" %} Blog</h2>
+        <div class="cards">
+          {% for post in site.posts %}
+            <article class="card">
+              <h3 class="card__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+              <p class="card__meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+              <p class="card__body">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+            </article>
+          {% else %}
+            {% comment %} Shown until the first post lands in _posts/ {% endcomment %}
+            <div class="soon">
+              <span class="soon__badge">Coming soon</span>
+              <h3 class="soon__title">Blog posts are coming soon</h3>
+              <p class="soon__body">I’m putting together my first posts about my PhD, my projects and my research. Stay tuned!</p>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
       <section class="section" id="resume">
         <h2 class="section__title">{% include icons.html name="briefcase" %} Resume</h2>
         {% include resume.html %}
