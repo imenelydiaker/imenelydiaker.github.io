@@ -220,17 +220,13 @@ collections:
 
 # Defaults
 defaults:
-  # _posts
-  # - scope:
-  #     path: ""
-  #     type: posts
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     read_time: true
-  #     comments: true
-  #     share: true
-  #     related: true
+  # _posts — listed in the Blog section of the home page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
   # _pages
   - scope:
       path: ""
