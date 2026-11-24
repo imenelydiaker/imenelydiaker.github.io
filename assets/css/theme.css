@@ -386,6 +386,85 @@ body {
   color: var(--muted);
 }
 
+/* Entries with a main figure: figure on the left, text on the right */
+
+.pub--fig {
+  display: grid;
+  grid-template-columns: 15em minmax(0, 1fr);
+  gap: 1.6em;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 2.2em;
+}
+
+.pub--fig::before {
+  content: none;
+}
+
+.pub__fig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  padding: 0.55em;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--e1);
+  overflow: hidden;
+}
+
+a.pub__fig {
+  transition: box-shadow 0.2s ease;
+}
+
+a.pub__fig:hover {
+  box-shadow: var(--e2);
+}
+
+.pub__fig img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pub__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0.65em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub__links li {
+  margin: 0;
+}
+
+.pub__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.3em 0.85em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-decoration: none;
+  background: var(--primary-soft);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pub__links a:hover,
+.pub__links a:focus {
+  color: #fff;
+  background: var(--primary);
+}
+
+.pub__links .icon {
+  font-size: 0.9em;
+}
+
 /* Blog — "coming soon" notice shown while there are no posts */
 
 .soon {
@@ -712,6 +791,12 @@ body {
 
   .section__title {
     font-size: 1.35rem;
+  }
+
+  /* stack the figure above the text */
+  .pub--fig {
+    grid-template-columns: 1fr;
+    gap: 0.9em;
   }
 
   .page__inner-wrap {

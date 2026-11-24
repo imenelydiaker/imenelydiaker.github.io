@@ -3,16 +3,31 @@
 
 <ol class="pubs">
   {% for pub in site.data.publications %}
-    <li class="pub">
-      <p class="pub__title">
-        {% if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
-      </p>
-      <p class="pub__authors">{{ pub.authors | replace: me, me_bold }}</p>
-      <p class="pub__meta">
-        {% if pub.venue %}{{ pub.venue }}{% endif %}
-        {% if pub.venue and pub.year %}<span class="card__sep">·</span>{% endif %}
-        {% if pub.year %}{{ pub.year }}{% endif %}
-      </p>
+    {% assign fig_link = pub.url | default: pub.project | default: pub.code %}
+    <li class="pub{% if pub.image %} pub--fig{% endif %}">
+      {% if pub.image %}
+        {% if fig_link %}<a class="pub__fig" href="{{ fig_link }}" tabindex="-1" aria-hidden="true">{% else %}<div class="pub__fig">{% endif %}
+          <img src="{{ pub.image | relative_url }}" alt="Main figure of {{ pub.title | escape }}" loading="lazy" decoding="async">
+        {% if fig_link %}</a>{% else %}</div>{% endif %}
+      {% endif %}
+      <div class="pub__body">
+        <p class="pub__title">
+          {% if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+        </p>
+        <p class="pub__authors">{{ pub.authors | replace: me, me_bold }}</p>
+        <p class="pub__meta">
+          {% if pub.venue %}{{ pub.venue }}{% endif %}
+          {% if pub.venue and pub.year %}<span class="card__sep">·</span>{% endif %}
+          {% if pub.year %}{{ pub.year }}{% endif %}
+        </p>
+        {% if pub.url or pub.code or pub.project %}
+          <ul class="pub__links">
+            {% if pub.url %}<li><a href="{{ pub.url }}">{% include icons.html name="file-lines" %} Paper</a></li>{% endif %}
+            {% if pub.code %}<li><a href="{{ pub.code }}">{% include icons.html name="github" %} Code</a></li>{% endif %}
+            {% if pub.project %}<li><a href="{{ pub.project }}">{% include icons.html name="arrow-up-right-from-square" %} Project page</a></li>{% endif %}
+          </ul>
+        {% endif %}
+      </div>
     </li>
   {% endfor %}
 </ol>
