@@ -3,61 +3,90 @@
 # The author name matching site.author.name is rendered in bold.
 # For papers with very long author lists, the list is shortened but always
 # keeps the first authors and Imene Kerboua.
+#
+# Optional fields:
+#   url      link to the paper (the title and the "Paper" button use it)
+#   code     link to the code repository
+#   project  link to the project page
+#   image    the paper's main figure, shown beside the entry (images/publications/)
+
+- title: "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents"
+  authors: "Imene Kerboua, Fatemeh Pesaran Zadeh, Xing Han Lù, et al."
+  venue: "NeurIPS 2026 (E&D Track)"
+  year: 2026
+  url: "https://arxiv.org/abs/2611.17955"
+  code: "https://github.com/McGill-NLP/webarena-pro"
+  project: "https://webarena-pro.github.io/"
+  image: "/images/publications/webarena-pro.png"
 
 - title: "Does The Way You Plan Matter? An Empirical Study of Planning Representations for LLM Web Agents"
   authors: "Alejandra Zambrano, Sara Vera Marjanovic, Imene Kerboua, Xing Han Lù, Leila Kosseim"
-  venue: "arXiv preprint"
+  venue: "REALM Workshop @ EMNLP 2026"
   year: 2026
   url: "https://arxiv.org/abs/2605.29927"
+  code: "https://github.com/alzambranolu13/plan-ahead"
+  image: "/images/publications/plan-ahead.png"
 
 - title: "CUBE: A Standard for Unifying Agent Benchmarks"
   authors: "Alexandre Lacoste, Nicolas Gontier, Oleh Shliazhko, …, Imene Kerboua, …, Siva Reddy, Dawn Song"
   venue: "arXiv preprint"
   year: 2026
   url: "https://arxiv.org/abs/2603.15798"
-
-- title: "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents"
-  authors: "Imene Kerboua, Fatemeh Pesaran Zadeh, Xing Han Lù, et al."
-  venue: "Workshop on Agents in the Wild: Safety, Security, and Beyond"
-  year: 2026
+  code: "https://github.com/The-AI-Alliance/cube-standard"
+  project: "https://the-ai-alliance.github.io/cube-standard/"
+  image: "/images/publications/cube.png"
 
 - title: "FocusAgent: Simple Yet Effective Ways of Trimming the Large Context of Web Agents"
   authors: "Imene Kerboua, Sahar Omidi Shayegan, Megh Thakkar, Xing Han Lù, Léo Boisvert, Massimo Caccia, Jérémy Espinas, Alexandre Aussem, Véronique Eglin, Alexandre Lacoste"
-  venue: "arXiv preprint"
-  year: 2025
+  venue: "TMLR"
+  year: 2026
   url: "https://arxiv.org/abs/2510.03204"
+  code: "https://github.com/imenelydiaker/focus_agent"
+  project: "https://imenelydiaker.github.io/focus_agent/"
+  image: "/images/publications/focusagent.png"
 
 - title: "LineRetriever: Planning-Aware Observation Reduction for Web Agents"
   authors: "Imene Kerboua, Sahar Omidi Shayegan, Megh Thakkar, Xing Han Lù, Massimo Caccia, Véronique Eglin, Alexandre Aussem, Jérémy Espinas, Alexandre Lacoste"
   venue: "arXiv preprint"
   year: 2025
   url: "https://arxiv.org/abs/2507.00210"
+  image: "/images/publications/lineretriever.png"
 
 - title: "Maintaining MTEB: Towards Long Term Usability and Reproducibility of Embedding Benchmarks"
   authors: "Isaac Chung, Imene Kerboua, Márton Kardos, Roman Solomatin, Kenneth Enevoldsen"
   venue: "arXiv preprint"
   year: 2025
   url: "https://arxiv.org/abs/2506.21182"
+  code: "https://github.com/embeddings-benchmark/mteb"
+  image: "/images/publications/maintaining-mteb.png"
 
 - title: "MIEB: Massive Image Embedding Benchmark"
   authors: "Chenghao Xiao, Isaac Chung, Imene Kerboua, Jamie Stirling, Xin Zhang, Márton Kardos, Roman Solomatin, Noura Al Moubayed, Kenneth Enevoldsen, Niklas Muennighoff"
   venue: "ICCV 2025"
   year: 2025
   url: "https://arxiv.org/abs/2504.10471"
+  code: "https://github.com/embeddings-benchmark/mteb"
+  image: "/images/publications/mieb.png"
 
 - title: "MMTEB: Massive Multilingual Text Embedding Benchmark"
   authors: "Kenneth Enevoldsen, Isaac Chung, Imene Kerboua, Márton Kardos, Ashwin Mathur, David Stap, …, Niklas Muennighoff"
   venue: "ICLR 2025"
   year: 2025
   url: "https://arxiv.org/abs/2502.13595"
+  code: "https://github.com/embeddings-benchmark/mteb"
+  image: "/images/publications/mmteb.png"
 
 - title: "MTEB-FR : une expérience à large échelle pour l'apprentissage de représentation en français"
   authors: "Wissam Siblini, Mathieu Ciancone, Imene Kerboua, Marion Schaeffer"
   venue: "EGC 2025"
   year: 2025
+  code: "https://github.com/Lyon-NLP/mteb-french"
+  image: "/images/publications/mteb-french.svg"
 
 - title: "MTEB-French: Resources for French Sentence Embedding Evaluation and Analysis"
   authors: "Mathieu Ciancone, Imene Kerboua, Marion Schaeffer, Wissam Siblini"
   venue: "arXiv preprint"
   year: 2024
   url: "https://arxiv.org/abs/2405.20468"
+  code: "https://github.com/Lyon-NLP/mteb-french"
+  image: "/images/publications/mteb-french.svg"

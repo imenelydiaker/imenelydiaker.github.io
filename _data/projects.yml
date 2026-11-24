@@ -1,5 +1,17 @@
 # Cards shown in the Projects section of the home page.
 # Add `url:` to make a card clickable.
+- title: "WebArena-Pro"
+  role: "Research project"
+  description: >
+    A reproducible benchmark of 300 tasks across 20 self-hosted web applications
+    that tests browser agents on heterogeneous sites, multimodal content (text,
+    vision, audio and video) and long, stateful workflows.
+  url: "https://webarena-pro.github.io/"
+  tags:
+    - "Web agents"
+    - "Benchmarking"
+    - "Multimodal"
+
 - title: "FocusAgent"
   role: "Research project"
   description: >
